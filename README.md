@@ -1,125 +1,105 @@
-&lt;div align="center" width="50"&gt;
-    &lt;img alt="Eriel Nicasio" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=3000&pause=1000&color=2E9AFE&center=true&vCenter=true&width=435&lines=¡Hola!+Soy+Eriel+Nicasio;Desarrollador+Web;Dominicano+🇩🇴;Siempre+aprendiendo" width="400"/&gt;
-&lt;/div&gt;
+<h1 align="center">¡Hola! 👋 Soy Eriel Nicasio</h1>
 
-&lt;h1 align="center"&gt;Hi &lt;img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"&gt;, I'm Eriel Nicasio&lt;/h1&gt;
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=3000&pause=1000&color=2E9AFE&center=true&vCenter=true&width=500&lines=Desarrollador+Web+Full+Stack+🚀;Si+puedes+imaginarlo,+puedes+programarlo;Eterno+estudiante+de+tecnología;Dominicano+🇩🇴" alt="Typing SVG" />
+</p>
 
-![GitHub followers](https://img.shields.io/github/followers/erielnicasio?style=social) ![GitHub User's stars](https://img.shields.io/github/stars/erielnicasio?style=social) ![Visitor](https://visitor-badge.laobi.icu/badge?page_id=erielnicasio.ErielNicasio) &lt;img src="https://komarev.com/ghpvc/?username=erielnicasio" alt="erielnicasio" /&gt;
+<p align="center">
+  <img src="https://img.shields.io/github/followers/erielnicasio?style=for-the-badge&logo=github&color=2E9AFE" alt="GitHub followers" />
+  <img src="https://img.shields.io/github/stars/erielnicasio?style=for-the-badge&logo=github&color=f39c12" alt="GitHub stars" />
+  <img src="https://visitor-badge.laobi.icu/badge?page_id=erielnicasio.ErielNicasio&style=for-the-badge&color=1abc9c" alt="Visitors" />
+</p>
 
 ---
 
-## About Me 🧑‍💻 :
+### 🧑‍💻 Sobre Mí
 
-- 🏢 **Administrador** en [Geisy Comercial]
-- 🏢 Former **Facturador de seguros SeNaSa** en [Censomi]
+Soy un apasionado **Desarrollador Web** con gran interés por las bases de datos y el análisis de sistemas. Disfruto creando soluciones digitales que sean tanto funcionales como visualmente atractivas.
+
+- 🏢 **Administrador** en Geisy Comercial
 - 🎓 Estudios técnicos en **Desarrollo Web, Base de Datos y Sistemas Informáticos**
-- 🏡 Vivo en **Higüey, La Altagracia, República Dominicana**
-- 🎂 **16 años** - Nacido el 13 de noviembre del 2008
-- ⚡ **Fun Facts** : 💻 🎮 🎵 ⚽ 📚
-
-&lt;br&gt;
-
-## Connect with me ☕ :
-
-&lt;br&gt;
-
-[![Email](https://img.icons8.com/fluency/48/000000/apple-mail.png "Email")](mailto:erielnicasio@email.com) [![LinkedIn](https://img.icons8.com/fluency/48/000000/linkedin.png "LinkedIn")](https://linkedin.com/in/erielnicasio) [![Instagram](https://img.icons8.com/fluency/48/000000/instagram-new.png "Instagram")](https://instagram.com/erielnicasio) [![Facebook](https://img.icons8.com/fluency/48/000000/facebook.png "Facebook")](https://facebook.com/erielnicasio) [![Phone](https://img.icons8.com/fluency/48/000000/phone-disconnected.png "Teléfono")](tel:+18090000000)
-
-&lt;br&gt;
-
-## What I am Good at 🚀 :
-
-&lt;br&gt;
-
-### 💻 Desarrollo Web
-&lt;img src="https://img.icons8.com/color/48/000000/html-5--v1.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/css3.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/javascript--v1.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/php-logo.png"/&gt;
-
-### 🗄️ Bases de Datos
-&lt;img src="https://img.icons8.com/color/48/000000/mysql-logo.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/mongodb.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/postgreesql.png"/&gt;
-
-### 🎨 Multimedia & Oficina
-&lt;img src="https://img.icons8.com/color/48/000000/adobe-photoshop.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/microsoft-office-2019.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/microsoft-word-2019.png"/&gt;
-
-&lt;br&gt;
-
-## My Tech Stack 📚 :
-
-&lt;br&gt;
-
-| Tecnología | Nivel |
-|------------|-------|
-| **HTML5 & CSS3** | ⭐⭐⭐⭐⭐ |
-| **JavaScript** | ⭐⭐⭐⭐ |
-| **PHP** | ⭐⭐⭐⭐ |
-| **MySQL** | ⭐⭐⭐⭐ |
-| **Diseño de Bases de Datos** | ⭐⭐⭐⭐ |
-| **Análisis de Sistemas** | ⭐⭐⭐⭐ |
-| **Paquete Office** | ⭐⭐⭐⭐⭐ |
-| **Recursos Multimedia** | ⭐⭐⭐⭐ |
-
-&lt;br&gt;
-
-## GitHub Stats 📈 :
-
-&lt;br&gt;
-
-[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=erielnicasio&theme=algolia&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats) [![Eriel Nicasio GitHub stats](https://github-readme-stats.vercel.app/api?username=erielnicasio&theme=algolia&show_icons=true)](https://github.com/erielnicasio/github-readme-stats) [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=erielnicasio&theme=algolia&layout=compact)](https://github.com/erielnicasio/github-readme-stats)
-
-&lt;br&gt;
-
-## GitHub Trophies 🏆 :
-
-&lt;br&gt;
-
-[![trophy](https://github-profile-trophy.vercel.app/?username=erielnicasio&theme=algolia)](https://github.com/erielnicasio/github-profile-trophy)
-
-&lt;br&gt;
-
-## Activity Graph 📊 :
-
-&lt;br&gt;
-
-[![Eriel's github activity graph](https://activity-graph.herokuapp.com/graph?username=erielnicasio&bg_color=0d1117&color=00E676&line=2E9AFE&point=FFFFFF&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
-
-&lt;br&gt;
-
-## My Projects 🚀 :
-
-&lt;br&gt;
-
-&lt;!-- Agrega aquí tus proyectos cuando los tengas --&gt;
-&lt;!-- Ejemplo:
-[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=erielnicasio&repo=nombre-repo&theme=algolia)](https://github.com/erielnicasio/nombre-repo)
---&gt;
-
-&lt;br&gt;
+- � Localizado en **Higüey, República Dominicana 🇩🇴**
+- 🎂 **16 años** impulsado por código y café ☕
+- ⚡ **Fun Fact:** Me encanta encontrar vulnerabilidades y optimizar cada línea de código.
 
 ---
 
-### 💡 Objetivo Profesional
+### 🛠️ Tecnologías & Herramientas
 
-&gt; *"Brindar a esta institución mis mejores servicios para el funcionamiento de la misma. Desempeñándome de manera eficiente para desarrollar todas mis capacidades y así obtener un excelente resultado en la labor y el área asignada."*
+<p align="left">
+  <a href="https://developer.mozilla.org/es/docs/Web/HTML" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/html5/html5-original-wordmark.svg" alt="html5" width="40" height="40"/>
+  </a>
+  <a href="https://developer.mozilla.org/es/docs/Web/CSS" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/css3/css3-original-wordmark.svg" alt="css3" width="40" height="40"/>
+  </a>
+  <a href="https://developer.mozilla.org/es/docs/Web/JavaScript" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="40" height="40"/>
+  </a>
+  <a href="https://www.php.net" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="40" height="40"/>
+  </a>
+  <a href="https://www.mysql.com/" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="40" height="40"/>
+  </a>
+  <a href="https://www.mongodb.com/" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mongodb/mongodb-original-wordmark.svg" alt="mongodb" width="40" height="40"/>
+  </a>
+  <a href="https://www.postgresql.org/" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/postgresql/postgresql-original-wordmark.svg" alt="postgresql" width="40" height="40"/>
+  </a>
+  <a href="https://git-scm.com/" target="_blank">
+    <img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="40" height="40"/>
+  </a>
+  <a href="https://www.adobe.com/products/photoshop.html" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/photoshop/photoshop-line.svg" alt="photoshop" width="40" height="40"/>
+  </a>
+  <a href="https://www.python.org" target="_blank">
+    <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/python/python-original.svg" alt="python" width="40" height="40"/>
+  </a>
+</p>
 
 ---
 
-## Referencias 📞 :
+### 📈 Mis Estadísticas de GitHub
 
-&lt;br&gt;
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api?username=erielnicasio&show_icons=true&theme=algolia&hide_border=true" alt="Eriel GitHub stats" />
+  <img src="https://github-readme-streak-stats.herokuapp.com?user=erielnicasio&theme=algolia&hide_border=true" alt="GitHub Streak" />
+</p>
 
-| Nombre | Contacto |
-|--------|----------|
-| **Ruber Rafael Nicasio P.** | (829) 641-7720 |
-| **Eridania Moreno J.** | (809) 395-0519 |
-| **Yudis Carolina Moreno J.** | (809) 880-1885 |
-
-&lt;br&gt;
+<p align="center">
+  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=erielnicasio&layout=compact&theme=algolia&hide_border=true" alt="Top Langs" />
+</p>
 
 ---
 
-&lt;p align="center"&gt;
-  &lt;img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9AFE&center=true&vCenter=true&width=435&lines=¡Gracias+por+visitar+mi+perfil!;¡Hagamos+algo+increíble+juntos!" alt="Typing SVG" /&gt;
-&lt;/p&gt;
+### 🤝 Conectemos
 
-Credit: [ErielNicasio](https://github.com/erielnicasio)
+<p align="center">
+  <a href="mailto:erielnicasio@email.com">
+    <img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Gmail" />
+  </a>
+  <a href="https://linkedin.com/in/erielnicasio">
+    <img src="https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white" alt="LinkedIn" />
+  </a>
+  <a href="https://instagram.com/erielnicasio">
+    <img src="https://img.shields.io/badge/Instagram-E4405F?style=for-the-badge&logo=instagram&logoColor=white" alt="Instagram" />
+  </a>
+  <a href="https://facebook.com/erielnicasio">
+    <img src="https://img.shields.io/badge/Facebook-1877F2?style=for-the-badge&logo=facebook&logoColor=white" alt="Facebook" />
+  </a>
+</p>
 
-Last edited on: 23/02/2026
+<p align="center">
+  <img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9AFE&center=true&vCenter=true&width=500&lines=¡Gracias+por+visitar+mi+perfil!;¡Trabajemos+juntos+en+algo+grande!" alt="Typing SVG" />
+</p>
+
+---
+<p align="center">
+  <i>"El éxito no es el final, el fracaso no es fatídico: es el valor para continuar lo que cuenta."</i>
+</p>
+
+<p align="center">
+  <img src="https://komarev.com/ghpvc/?username=erielnicasio&color=blueviolet&style=flat-square" alt="Profile Views" />
+</p>
