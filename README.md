@@ -1,86 +1,125 @@
-&lt;h1 align="center"&gt;¡Hola! 👋 Soy Eriel Nicasio&lt;/h1&gt;
+&lt;div align="center" width="50"&gt;
+    &lt;img alt="Eriel Nicasio" src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&size=25&duration=3000&pause=1000&color=2E9AFE&center=true&vCenter=true&width=435&lines=¡Hola!+Soy+Eriel+Nicasio;Desarrollador+Web;Dominicano+🇩🇴;Siempre+aprendiendo" width="400"/&gt;
+&lt;/div&gt;
 
-&lt;p align="center"&gt;
-  &lt;img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9AFE&center=true&vCenter=true&width=435&lines=Desarrollador+Web+en+formaci%C3%B3n;Apasionado+por+la+tecnolog%C3%ADa;Siempre+aprendiendo+cosas+nuevas" alt="Typing SVG" /&gt;
-&lt;/p&gt;
+&lt;h1 align="center"&gt;Hi &lt;img src="https://media.giphy.com/media/hvRJCLFzcasrR4ia7z/giphy.gif" width="35"&gt;, I'm Eriel Nicasio&lt;/h1&gt;
 
-&lt;p align="center"&gt;
-  &lt;img src="https://img.shields.io/badge/Dominicano-🇩🇴-blue?style=for-the-badge" alt="Dominicano"&gt;
-  &lt;img src="https://img.shields.io/badge/Edad-16%20años-success?style=for-the-badge" alt="Edad"&gt;
-&lt;/p&gt;
+![GitHub followers](https://img.shields.io/github/followers/erielnicasio?style=social) ![GitHub User's stars](https://img.shields.io/github/stars/erielnicasio?style=social) ![Visitor](https://visitor-badge.laobi.icu/badge?page_id=erielnicasio.ErielNicasio) &lt;img src="https://komarev.com/ghpvc/?username=erielnicasio" alt="erielnicasio" /&gt;
 
 ---
 
-## 🚀 Sobre Mí
+## About Me 🧑‍💻 :
 
-Soy un joven dominicano apasionado por la tecnología y el desarrollo de software. Actualmente me estoy formando como desarrollador web y busco oportunidades para aplicar mis conocimientos en proyectos reales.
+- 🏢 **Administrador** en [Geisy Comercial]
+- 🏢 Former **Facturador de seguros SeNaSa** en [Censomi]
+- 🎓 Estudios técnicos en **Desarrollo Web, Base de Datos y Sistemas Informáticos**
+- 🏡 Vivo en **Higüey, La Altagracia, República Dominicana**
+- 🎂 **16 años** - Nacido el 13 de noviembre del 2008
+- ⚡ **Fun Facts** : 💻 🎮 🎵 ⚽ 📚
 
-- 🔭 Actualmente estoy trabajando en **mejorar mis habilidades de desarrollo web**
-- 🌱 Estoy aprendiendo **nuevas tecnologías y frameworks modernos**
-- 👯 Busco colaborar en **proyectos de código abierto y desarrollo web**
-- 💼 Tengo experiencia como **Administrador** y **Facturador de seguros SeNaSa**
-- 🎯 Objetivo: **Desarrollar soluciones tecnológicas eficientes**
+&lt;br&gt;
+
+## Connect with me ☕ :
+
+&lt;br&gt;
+
+[![Email](https://img.icons8.com/fluency/48/000000/apple-mail.png "Email")](mailto:erielnicasio@email.com) [![LinkedIn](https://img.icons8.com/fluency/48/000000/linkedin.png "LinkedIn")](https://linkedin.com/in/erielnicasio) [![Instagram](https://img.icons8.com/fluency/48/000000/instagram-new.png "Instagram")](https://instagram.com/erielnicasio) [![Facebook](https://img.icons8.com/fluency/48/000000/facebook.png "Facebook")](https://facebook.com/erielnicasio) [![Phone](https://img.icons8.com/fluency/48/000000/phone-disconnected.png "Teléfono")](tel:+18090000000)
+
+&lt;br&gt;
+
+## What I am Good at 🚀 :
+
+&lt;br&gt;
+
+### 💻 Desarrollo Web
+&lt;img src="https://img.icons8.com/color/48/000000/html-5--v1.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/css3.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/javascript--v1.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/php-logo.png"/&gt;
+
+### 🗄️ Bases de Datos
+&lt;img src="https://img.icons8.com/color/48/000000/mysql-logo.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/mongodb.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/postgreesql.png"/&gt;
+
+### 🎨 Multimedia & Oficina
+&lt;img src="https://img.icons8.com/color/48/000000/adobe-photoshop.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/microsoft-office-2019.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/microsoft-excel-2019.png"/&gt; &lt;img src="https://img.icons8.com/color/48/000000/microsoft-word-2019.png"/&gt;
+
+&lt;br&gt;
+
+## My Tech Stack 📚 :
+
+&lt;br&gt;
+
+| Tecnología | Nivel |
+|------------|-------|
+| **HTML5 & CSS3** | ⭐⭐⭐⭐⭐ |
+| **JavaScript** | ⭐⭐⭐⭐ |
+| **PHP** | ⭐⭐⭐⭐ |
+| **MySQL** | ⭐⭐⭐⭐ |
+| **Diseño de Bases de Datos** | ⭐⭐⭐⭐ |
+| **Análisis de Sistemas** | ⭐⭐⭐⭐ |
+| **Paquete Office** | ⭐⭐⭐⭐⭐ |
+| **Recursos Multimedia** | ⭐⭐⭐⭐ |
+
+&lt;br&gt;
+
+## GitHub Stats 📈 :
+
+&lt;br&gt;
+
+[![GitHub Streak](https://github-readme-streak-stats.herokuapp.com?user=erielnicasio&theme=algolia&date_format=M%20j%5B%2C%20Y%5D)](https://git.io/streak-stats) [![Eriel Nicasio GitHub stats](https://github-readme-stats.vercel.app/api?username=erielnicasio&theme=algolia&show_icons=true)](https://github.com/erielnicasio/github-readme-stats) [![Top Langs](https://github-readme-stats.vercel.app/api/top-langs/?username=erielnicasio&theme=algolia&layout=compact)](https://github.com/erielnicasio/github-readme-stats)
+
+&lt;br&gt;
+
+## GitHub Trophies 🏆 :
+
+&lt;br&gt;
+
+[![trophy](https://github-profile-trophy.vercel.app/?username=erielnicasio&theme=algolia)](https://github.com/erielnicasio/github-profile-trophy)
+
+&lt;br&gt;
+
+## Activity Graph 📊 :
+
+&lt;br&gt;
+
+[![Eriel's github activity graph](https://activity-graph.herokuapp.com/graph?username=erielnicasio&bg_color=0d1117&color=00E676&line=2E9AFE&point=FFFFFF&hide_border=true)](https://github.com/ashutosh00710/github-readme-activity-graph)
+
+&lt;br&gt;
+
+## My Projects 🚀 :
+
+&lt;br&gt;
+
+&lt;!-- Agrega aquí tus proyectos cuando los tengas --&gt;
+&lt;!-- Ejemplo:
+[![Readme Card](https://github-readme-stats.vercel.app/api/pin/?username=erielnicasio&repo=nombre-repo&theme=algolia)](https://github.com/erielnicasio/nombre-repo)
+--&gt;
+
+&lt;br&gt;
 
 ---
 
-## 🛠️ Tecnologías y Herramientas
+### 💡 Objetivo Profesional
 
-&lt;p align="center"&gt;
-  &lt;img src="https://img.shields.io/badge/HTML5-E34F26?style=for-the-badge&logo=html5&logoColor=white" alt="HTML5"&gt;
-  &lt;img src="https://img.shields.io/badge/CSS3-1572B6?style=for-the-badge&logo=css3&logoColor=white" alt="CSS3"&gt;
-  &lt;img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black" alt="JavaScript"&gt;
-  &lt;img src="https://img.shields.io/badge/PHP-777BB4?style=for-the-badge&logo=php&logoColor=white" alt="PHP"&gt;
-  &lt;img src="https://img.shields.io/badge/MySQL-4479A1?style=for-the-badge&logo=mysql&logoColor=white" alt="MySQL"&gt;
-  &lt;img src="https://img.shields.io/badge/Microsoft_Office-D83B01?style=for-the-badge&logo=microsoft-office&logoColor=white" alt="Office"&gt;
-&lt;/p&gt;
-
-### 📚 Formación Técnica
-- ✅ **Ofimática**
-- ✅ **Desarrollo Web**
-- ✅ **Diseño y Desarrollo de Base de Datos**
-- ✅ **Análisis y Diseño de Sistemas Informáticos**
-- ✅ **Recursos Multimedia**
-- ✅ **Paquete de Office**
+&gt; *"Brindar a esta institución mis mejores servicios para el funcionamiento de la misma. Desempeñándome de manera eficiente para desarrollar todas mis capacidades y así obtener un excelente resultado en la labor y el área asignada."*
 
 ---
 
-## 📊 Mis Estadísticas de GitHub
+## Referencias 📞 :
 
-&lt;p align="center"&gt;
-  &lt;img src="https://github-readme-stats.vercel.app/api?username=erielnicasio&show_icons=true&theme=tokyonight&locale=es" alt="GitHub Stats" /&gt;
-&lt;/p&gt;
+&lt;br&gt;
 
-&lt;p align="center"&gt;
-  &lt;img src="https://github-readme-streak-stats.herokuapp.com/?user=erielnicasio&theme=tokyonight" alt="GitHub Streak" /&gt;
-&lt;/p&gt;
+| Nombre | Contacto |
+|--------|----------|
+| **Ruber Rafael Nicasio P.** | (829) 641-7720 |
+| **Eridania Moreno J.** | (809) 395-0519 |
+| **Yudis Carolina Moreno J.** | (809) 880-1885 |
 
-&lt;p align="center"&gt;
-  &lt;img src="https://github-readme-stats.vercel.app/api/top-langs/?username=erielnicasio&layout=compact&theme=tokyonight&locale=es" alt="Top Languages" /&gt;
-&lt;/p&gt;
-
----
-
-## 📫 Contacto
-
-&lt;p align="center"&gt;
-  &lt;a href="mailto:tu-email@ejemplo.com"&gt;
-    &lt;img src="https://img.shields.io/badge/Email-D14836?style=for-the-badge&logo=gmail&logoColor=white" alt="Email"&gt;
-  &lt;/a&gt;
-  &lt;!-- Agrega tus redes sociales aquí --&gt;
-&lt;/p&gt;
-
----
-
-## ⚡ Dato Curioso
-
-&gt; ¡Empecé mi carrera en tecnología a los 15 años y combino mi experiencia administrativa con mis habilidades técnicas para crear soluciones prácticas! 🚀
+&lt;br&gt;
 
 ---
 
 &lt;p align="center"&gt;
-  &lt;img src="https://komarev.com/ghpvc/?username=erielnicasio&label=Visitas%20al%20perfil&color=0e75b6&style=flat" alt="Profile views" /&gt;
+  &lt;img src="https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=2E9AFE&center=true&vCenter=true&width=435&lines=¡Gracias+por+visitar+mi+perfil!;¡Hagamos+algo+increíble+juntos!" alt="Typing SVG" /&gt;
 &lt;/p&gt;
 
-&lt;p align="center"&gt;
-  💙 &lt;strong&gt;¡Gracias por visitar mi perfil!&lt;/strong&gt; 💙
-&lt;/p&gt;
+Credit: [ErielNicasio](https://github.com/erielnicasio)
+
+Last edited on: 23/02/2026
