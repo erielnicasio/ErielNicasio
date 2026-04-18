@@ -100,7 +100,7 @@ class SponsorsModule:
         self.tree.column("empresa", width=150)
         self.tree.column("telefono", width=120)
         self.tree.column("email", width=160)
-        self.tree.column("monto", width=110, anchor="right")
+        self.tree.column("monto", width=110, anchor="e")
         self.tree.column("tipo", width=100, anchor="center")
 
         self.tree.tag_configure("monetario", background="#dcfce7")

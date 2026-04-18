@@ -130,7 +130,7 @@ class ReportsModule:
         self.tree.column("fecha", width=140)
         self.tree.column("tipo", width=120)
         self.tree.column("descripcion", width=300)
-        self.tree.column("monto", width=110, anchor="right")
+        self.tree.column("monto", width=110, anchor="e")
         self.tree.column("usuario", width=120)
 
         self.tree.tag_configure("venta", background="#dcfce7")
