@@ -341,6 +341,7 @@ button { cursor: pointer; border: none; background: none; }
   align-items: center;
   gap: 12px;
 }
+.mobile-only { display: none; }
 
 /* Mobile nav */
 .nav-toggle {
@@ -380,8 +381,8 @@ button { cursor: pointer; border: none; background: none; }
     border-bottom: 1px solid var(--gray-100);
     font-size: 1rem;
   }
-  .nav-actions { gap: 8px; }
-  .nav-actions .btn { padding: 8px 14px; font-size: .8rem; }
+  .nav-actions { display: none; }
+  .mobile-only { display: block !important; }
 }
 
 /* ── Hero ───────────────────────────────────────────────── */
