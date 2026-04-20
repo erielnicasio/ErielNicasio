@@ -217,6 +217,7 @@
       if (module === 'prestamos') DB.updatePrestamoStatus(id, status);
       else if (module === 'marketplace') DB.updateMarketplaceStatus(id, status);
       else if (module === 'donaciones') DB.updateDonacionStatus(id, status);
+      else if (module === 'casos') DB.updateCasoStatus(id, status);
       loadAdminData();
       showToast(`Estado actualizado a: ${status}`);
     }

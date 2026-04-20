@@ -215,11 +215,20 @@
     }
 
     function submitCase() {
+      const catKey = document.getElementById('csCat').value;
+      const catMap = { medico: 'Emergencia Médica', familiar: 'Ayuda Familiar', educacion: 'Educación', vivienda: 'Vivienda' };
       DB.saveCaso({
+        titulo: document.getElementById('csTitle').value,
         title: document.getElementById('csTitle').value,
+        story: document.getElementById('csDesc').value,
         desc: document.getElementById('csDesc').value,
-        catKey: document.getElementById('csCat').value,
-        meta: parseInt(document.getElementById('csMeta').value)
+        catKey: catKey,
+        categoria: catMap[catKey] || catKey,
+        meta: parseInt(document.getElementById('csMeta').value),
+        raised: 0,
+        img: 'https://images.unsplash.com/photo-1469571486292-0ba58a3f068b?w=800',
+        trustLevel: 'Bronze',
+        dist: 0
       });
       closeModal('modalCase');
       renderCases();
