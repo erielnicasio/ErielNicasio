@@ -179,7 +179,7 @@
       const grid = document.getElementById('casesGrid');
 
       grid.innerHTML = filtered.map(c => {
-        const pct = Math.min(100, Math.round((c.raised/c.meta)*100));
+        const pct = c.meta > 0 ? Math.min(100, Math.round((c.raised/c.meta)*100)) : 0;
         return `
         <div class="card">
           <div style="position:relative">

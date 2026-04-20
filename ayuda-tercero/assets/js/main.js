@@ -16,8 +16,9 @@ function initNavbar() {
   const navbar = document.querySelector('.navbar');
   if (!navbar) return;
 
+  const hasHero = !!document.querySelector('.hero');
   const onScroll = () => {
-    if (window.scrollY > 60) {
+    if (window.scrollY > 60 || !hasHero) {
       navbar.classList.add('scrolled');
     } else {
       navbar.classList.remove('scrolled');
