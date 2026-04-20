@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mi Perfil - Ayuda a un Tercero</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i> Ayuda<span>Tercero</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="donaciones.html">Donaciones</a>
+        <a href="credifast.html">Préstamos</a>
+        <a href="casos.html">Casos Sociales</a>
+        <a href="impacto.html">Impacto</a>
+      </div>
+      <div class="nav-actions">
+        <a href="reputacion.html" class="btn btn--outline btn--sm">Reputación</a>
+        <a href="logros.html" class="btn btn--primary btn--sm">Logros</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="page-content">
+    <div class="container">
+      <div class="layout-sidebar" style="grid-template-columns:300px 1fr">
+        <!-- Profile Sidebar -->
+        <aside>
+          <div class="profile-card mb-24">
+            <div class="profile-card__cover"></div>
+            <div class="profile-card__avatar" id="profileAvatar">JR</div>
+            <div style="padding:0 24px 28px;text-align:center">
+              <h3 style="font-family:var(--font-body);font-size:1.25rem;font-weight:800;color:var(--navy);margin-bottom:2px" id="profileName">Juan Rodríguez</h3>
+              <p class="text-muted" style="font-size:.8rem;margin-bottom:16px">Monte Plata, RD</p>
+              <div class="flex justify-between" style="padding:16px 0;border-top:1px solid var(--gray-100)">
+                <div class="text-center" style="flex:1">
+                  <div class="fw-800" style="color:var(--navy)">12</div>
+                  <div style="font-size:.7rem;color:var(--text-muted)">Donaciones</div>
+                </div>
+                <div class="text-center" style="flex:1;border-left:1px solid var(--gray-100);border-right:1px solid var(--gray-100)">
+                  <div class="fw-800" style="color:var(--navy)">450</div>
+                  <div style="font-size:.7rem;color:var(--text-muted)">Puntos</div>
+                </div>
+                <div class="text-center" style="flex:1">
+                  <div class="fw-800" style="color:var(--navy)">3</div>
+                  <div style="font-size:.7rem;color:var(--text-muted)">Casos</div>
+                </div>
+              </div>
+              <a href="reputacion.html" class="btn btn--outline btn--sm btn--full mt-8">Ver Reputación</a>
+              <a href="logros.html" class="btn btn--primary btn--sm btn--full mt-8">Mis Logros</a>
+            </div>
+          </div>
+
+          <div class="panel">
+            <h3 class="panel__title" style="font-size:.85rem;margin-bottom:12px">Insignias Recientes</h3>
+            <div class="flex gap-8" style="flex-wrap:wrap">
+              <div style="width:44px;height:44px;background:var(--orange-light);border-radius:50%;display:flex;align-items:center;justify-content:center" title="Donador Frecuente">
+                <i data-lucide="heart" style="width:20px;height:20px;color:var(--orange)"></i>
+              </div>
+              <div style="width:44px;height:44px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center" title="Verificado">
+                <i data-lucide="shield-check" style="width:20px;height:20px;color:var(--green)"></i>
+              </div>
+              <div style="width:44px;height:44px;background:#E0F2FE;border-radius:50%;display:flex;align-items:center;justify-content:center" title="Líder Regional">
+                <i data-lucide="map-pin" style="width:20px;height:20px;color:var(--royal)"></i>
+              </div>
+            </div>
+          </div>
+        </aside>
+
+        <!-- Main Content -->
+        <section>
+          <!-- Tabs -->
+          <div class="tabs" id="profileTabs">
+            <button class="tab-btn active" data-tab="tab-info">Información</button>
+            <button class="tab-btn" data-tab="tab-activity">Actividad</button>
+            <button class="tab-btn" data-tab="tab-settings">Configuración</button>
+          </div>
+
+          <!-- Info Tab -->
+          <div class="tab-content active" id="tab-info">
+            <div class="panel">
+              <h3 class="panel__title" style="margin-bottom:20px">Información Personal</h3>
+              <div class="grid grid-2" style="gap:20px">
+                <div>
+                  <div style="font-size:.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Nombre</div>
+                  <div class="fw-600" style="font-size:.9rem">Juan Rodríguez</div>
+                </div>
+                <div>
+                  <div style="font-size:.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Correo</div>
+                  <div class="fw-600" style="font-size:.9rem">juan.rodriguez@email.com</div>
+                </div>
+                <div>
+                  <div style="font-size:.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Celular</div>
+                  <div class="fw-600" style="font-size:.9rem">809-555-1234</div>
+                </div>
+                <div>
+                  <div style="font-size:.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Ubicación</div>
+                  <div class="fw-600" style="font-size:.9rem">Monte Plata, RD</div>
+                </div>
+                <div>
+                  <div style="font-size:.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Miembro Desde</div>
+                  <div class="fw-600" style="font-size:.9rem">Enero 2024</div>
+                </div>
+                <div>
+                  <div style="font-size:.75rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Nivel de Confianza</div>
+                  <span class="badge badge--orange">Gold</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Activity Tab -->
+          <div class="tab-content" id="tab-activity">
+            <div class="panel">
+              <h3 class="panel__title" style="margin-bottom:20px">Actividad Reciente</h3>
+              <div class="flex flex-col gap-16">
+                <div class="flex items-center gap-16" style="padding:12px 0;border-bottom:1px solid var(--gray-100)">
+                  <div style="width:36px;height:36px;background:var(--green-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <i data-lucide="gift" style="width:16px;height:16px;color:var(--green)"></i>
+                  </div>
+                  <div>
+                    <div class="fw-600" style="font-size:.85rem">Donó 15 prendas de ropa infantil</div>
+                    <div style="font-size:.72rem;color:var(--text-muted)">Hace 2 días</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-16" style="padding:12px 0;border-bottom:1px solid var(--gray-100)">
+                  <div style="width:36px;height:36px;background:var(--orange-light);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <i data-lucide="shopping-bag" style="width:16px;height:16px;color:var(--orange)"></i>
+                  </div>
+                  <div>
+                    <div class="fw-600" style="font-size:.85rem">Publicó artículo en marketplace</div>
+                    <div style="font-size:.72rem;color:var(--text-muted)">Hace 5 días</div>
+                  </div>
+                </div>
+                <div class="flex items-center gap-16" style="padding:12px 0">
+                  <div style="width:36px;height:36px;background:#E0F2FE;border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                    <i data-lucide="heart" style="width:16px;height:16px;color:var(--royal)"></i>
+                  </div>
+                  <div>
+                    <div class="fw-600" style="font-size:.85rem">Apoyó caso social de operación pediátrica</div>
+                    <div style="font-size:.72rem;color:var(--text-muted)">Hace 1 semana</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Settings Tab -->
+          <div class="tab-content" id="tab-settings">
+            <div class="panel">
+              <h3 class="panel__title" style="margin-bottom:20px">Editar Perfil</h3>
+              <form onsubmit="event.preventDefault();showToast('Perfil actualizado correctamente.')">
+                <div class="form-row">
+                  <div class="form-group">
+                    <label class="form-label">Nombre</label>
+                    <input type="text" class="form-control" value="Juan">
+                  </div>
+                  <div class="form-group">
+                    <label class="form-label">Apellido</label>
+                    <input type="text" class="form-control" value="Rodríguez">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Correo Electrónico</label>
+                  <input type="email" class="form-control" value="juan.rodriguez@email.com">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Celular</label>
+                  <input type="tel" class="form-control" value="809-555-1234">
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Biografía</label>
+                  <textarea class="form-control" rows="3">Voluntario activo en Monte Plata. Comprometido con el bienestar comunitario.</textarea>
+                </div>
+                <button type="submit" class="btn btn--primary">Guardar Cambios</button>
+              </form>
+            </div>
+            <div class="panel">
+              <h3 class="panel__title" style="margin-bottom:16px">Sesión</h3>
+              <button class="btn btn--outline btn--sm" onclick="localStorage.removeItem('user_session');window.location.href='login.html'">Cerrar Sesión</button>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:24px;height:24px"></i> Ayuda<span>Tercero</span></a>
+          <p>Ecosistema solidario justo y transparente.</p>
+        </div>
+        <div><h4>Recursos</h4><ul><li><a href="casos.html">Casos sociales</a></li><li><a href="reportes.html">Transparencia</a></li></ul></div>
+        <div><h4>Compañía</h4><ul><li><a href="impacto.html">Impacto</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="legal.html#privacidad">Privacidad</a></li><li><a href="legal.html#terminos">Términos</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Ayuda a un Tercero.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/db.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', () => {
+      initTabs('#profileTabs');
+
+      // Load user session data
+      const session = JSON.parse(localStorage.getItem('user_session') || '{}');
+      if (session.name) {
+        document.getElementById('profileName').textContent = session.name;
+        document.getElementById('profileAvatar').textContent = session.name.split(' ').map(n => n[0]).join('');
+      }
+    });
+
+    // Simple tab init for profile
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      btn.addEventListener('click', () => {
+        document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+        document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+      });
+    });
+  </script>
+</body>
+</html>

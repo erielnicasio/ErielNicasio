@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Portal de Transparencia - Ayuda a un Tercero</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i> Ayuda<span>Tercero</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="donaciones.html">Donaciones</a>
+        <a href="credifast.html">Préstamos</a>
+        <a href="casos.html">Casos Sociales</a>
+        <a href="impacto.html">Impacto</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn--outline btn--sm">Iniciar Sesión</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero" style="padding-bottom:64px">
+    <div class="container">
+      <h1>Portal de Transparencia</h1>
+      <p>Rendición de cuentas abierta: cada donación, cada préstamo, cada impacto es verificable.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="page-content" style="padding-top:0;margin-top:-24px">
+    <div class="container">
+      <!-- Key Metrics -->
+      <div class="grid grid-4 mb-32">
+        <div class="kpi-card text-center">
+          <div class="kpi-card__label">Fondos Recaudados</div>
+          <div class="kpi-card__value" style="color:var(--green)">$145,280</div>
+          <div class="kpi-card__trend kpi-card__trend--up">+23% vs. mes pasado</div>
+        </div>
+        <div class="kpi-card text-center">
+          <div class="kpi-card__label">Préstamos Otorgados</div>
+          <div class="kpi-card__value">$89,500</div>
+          <div class="kpi-card__trend kpi-card__trend--up">+12%</div>
+        </div>
+        <div class="kpi-card text-center">
+          <div class="kpi-card__label">Tasa de Éxito</div>
+          <div class="kpi-card__value" style="color:var(--green)">92%</div>
+          <div class="kpi-card__trend kpi-card__trend--up">+5%</div>
+        </div>
+        <div class="kpi-card text-center">
+          <div class="kpi-card__label">Usuarios Activos</div>
+          <div class="kpi-card__value">1,245</div>
+          <div class="kpi-card__trend kpi-card__trend--up">+18%</div>
+        </div>
+      </div>
+
+      <!-- Distribution Charts -->
+      <div class="grid grid-2 mb-32">
+        <div class="panel">
+          <div class="panel__header">
+            <h3 class="panel__title">Distribución de Fondos</h3>
+          </div>
+          <div class="chart-bars" style="height:160px">
+            <div class="bar" style="height:85%;background:var(--royal)" title="Casos Sociales: 45%"></div>
+            <div class="bar" style="height:60%;background:var(--orange)" title="Préstamos: 30%"></div>
+            <div class="bar" style="height:40%;background:var(--green)" title="Donaciones: 15%"></div>
+            <div class="bar" style="height:20%;background:var(--gold)" title="Operaciones: 10%"></div>
+          </div>
+          <div class="flex justify-between text-muted mt-8" style="font-size:.72rem">
+            <span>Casos (45%)</span><span>Préstamos (30%)</span><span>Donaciones (15%)</span><span>Operaciones (10%)</span>
+          </div>
+        </div>
+        <div class="panel">
+          <div class="panel__header">
+            <h3 class="panel__title">Tendencia Mensual</h3>
+          </div>
+          <div class="chart-bars" style="height:160px">
+            <div class="bar" style="height:30%;background:var(--royal)"></div>
+            <div class="bar" style="height:45%;background:var(--royal)"></div>
+            <div class="bar" style="height:55%;background:var(--royal)"></div>
+            <div class="bar" style="height:40%;background:var(--royal)"></div>
+            <div class="bar" style="height:65%;background:var(--royal)"></div>
+            <div class="bar" style="height:80%;background:var(--royal)"></div>
+            <div class="bar" style="height:95%;background:var(--orange)"></div>
+          </div>
+          <div class="flex justify-between text-muted mt-8" style="font-size:.72rem">
+            <span>Ene</span><span>Feb</span><span>Mar</span><span>Abr</span><span>May</span><span>Jun</span><span class="fw-700" style="color:var(--orange)">Jul</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Reports Table -->
+      <div class="panel mb-32">
+        <div class="panel__header">
+          <h3 class="panel__title">Reportes Públicos</h3>
+          <span class="badge badge--green">Verificado</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Período</th>
+                <th>Tipo</th>
+                <th>Monto Total</th>
+                <th>Beneficiarios</th>
+                <th>Eficiencia</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Julio 2026</strong></td>
+                <td>Reporte Mensual</td>
+                <td>$28,450</td>
+                <td>145</td>
+                <td><span class="badge badge--green">95%</span></td>
+                <td><span class="badge badge--green">Publicado</span></td>
+              </tr>
+              <tr>
+                <td><strong>Junio 2026</strong></td>
+                <td>Reporte Mensual</td>
+                <td>$24,380</td>
+                <td>128</td>
+                <td><span class="badge badge--green">93%</span></td>
+                <td><span class="badge badge--green">Publicado</span></td>
+              </tr>
+              <tr>
+                <td><strong>Mayo 2026</strong></td>
+                <td>Reporte Mensual</td>
+                <td>$21,900</td>
+                <td>112</td>
+                <td><span class="badge badge--green">91%</span></td>
+                <td><span class="badge badge--green">Publicado</span></td>
+              </tr>
+              <tr>
+                <td><strong>Q1 2026</strong></td>
+                <td>Reporte Trimestral</td>
+                <td>$58,200</td>
+                <td>320</td>
+                <td><span class="badge badge--green">92%</span></td>
+                <td><span class="badge badge--green">Publicado</span></td>
+              </tr>
+              <tr>
+                <td><strong>2025</strong></td>
+                <td>Reporte Anual</td>
+                <td>$145,280</td>
+                <td>1,245</td>
+                <td><span class="badge badge--green">89%</span></td>
+                <td><span class="badge badge--green">Publicado</span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Blockchain/Verification Note -->
+      <div class="panel" style="background:linear-gradient(135deg,var(--navy) 0%,var(--navy-light) 100%);color:var(--white);border:none">
+        <div class="flex items-center gap-24" style="flex-wrap:wrap">
+          <div style="width:64px;height:64px;background:rgba(255,255,255,.1);border-radius:var(--radius-md);display:flex;align-items:center;justify-content:center;flex-shrink:0">
+            <i data-lucide="shield-check" style="width:32px;height:32px;color:var(--gold)"></i>
+          </div>
+          <div style="flex:1;min-width:280px">
+            <h3 style="font-family:var(--font-body);color:var(--white);font-size:1.15rem;font-weight:800;margin-bottom:6px">Transparencia Verificada</h3>
+            <p style="font-size:.9rem;color:rgba(255,255,255,.75);line-height:1.7">Todos los reportes son auditados y publicados de forma abierta. Cada transacción es trazable y cualquier persona puede solicitar auditorías independientes.</p>
+          </div>
+          <a href="#" class="btn btn--ghost">Solicitar Auditoría</a>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:24px;height:24px"></i> Ayuda<span>Tercero</span></a>
+          <p>Ecosistema solidario justo y transparente.</p>
+        </div>
+        <div><h4>Recursos</h4><ul><li><a href="casos.html">Casos sociales</a></li><li><a href="reportes.html">Transparencia</a></li></ul></div>
+        <div><h4>Compañía</h4><ul><li><a href="impacto.html">Impacto</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="legal.html#privacidad">Privacidad</a></li><li><a href="legal.html#terminos">Términos</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Ayuda a un Tercero.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/db.js"></script>
+  <script src="../assets/js/main.js"></script>
+</body>
+</html>

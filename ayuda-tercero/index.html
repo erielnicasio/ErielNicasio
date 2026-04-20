@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ayuda a un Tercero | Impacto Social en Monte Plata</title>
+  <meta name="description" content="Plataforma de ayuda comunitaria, marketplace solidario y préstamos con enfoque social en Monte Plata, República Dominicana.">
+  <link rel="stylesheet" href="assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body class="hero-active">
+
+  <!-- ═══ Navbar ═══ -->
+  <nav class="navbar">
+    <div class="container nav-inner">
+      <a href="index.html" class="logo">
+        <i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i>
+        Ayuda<span>Tercero</span>
+      </a>
+      <div class="nav-links">
+        <a href="index.html" class="active">Inicio</a>
+        <a href="pages/marketplace.html">Marketplace</a>
+        <a href="pages/donaciones.html">Donaciones</a>
+        <a href="pages/credifast.html">Préstamos</a>
+        <a href="pages/casos.html">Casos Sociales</a>
+        <a href="pages/impacto.html">Impacto</a>
+      </div>
+      <div class="nav-actions">
+        <a href="pages/login.html" class="btn btn--outline btn--sm">Iniciar Sesión</a>
+        <a href="pages/admin.html" class="btn btn--primary btn--sm">Admin</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ═══ Hero ═══ -->
+  <header class="hero">
+    <img src="assets/img/media-hero-2.jpg" alt="Monte Plata - Comunidad Solidaria" class="hero__bg">
+    <div class="hero__overlay"></div>
+    <div class="container hero__content animate-in">
+      <h1 class="hero__title">Impulsando el Impacto Social en Nuestra Comunidad</h1>
+      <p class="hero__subtitle">Conectamos corazones dispuestos a ayudar con necesidades reales a través de tecnología, transparencia y solidaridad comunitaria en Monte Plata.</p>
+      <div class="hero__actions">
+        <a href="pages/donaciones.html" class="btn btn--primary btn--lg">Empezar a Ayudar</a>
+        <a href="pages/marketplace.html" class="btn btn--outline-white btn--lg">Explorar Marketplace</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ═══ Stats Bar ═══ -->
+  <section class="stats-bar">
+    <div class="container">
+      <div class="stats-bar__inner">
+        <div class="stat-item">
+          <div class="stat-item__icon stat-item__icon--blue"><i data-lucide="users" style="width:20px;height:20px"></i></div>
+          <div class="stat-item__value" id="stat-vidas" data-count="1245">0</div>
+          <div class="stat-item__label">Vidas Impactadas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__icon stat-item__icon--orange"><i data-lucide="package" style="width:20px;height:20px"></i></div>
+          <div class="stat-item__value" id="stat-donaciones" data-count="3892">0</div>
+          <div class="stat-item__label">Donaciones Realizadas</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__icon stat-item__icon--green"><i data-lucide="leaf" style="width:20px;height:20px"></i></div>
+          <div class="stat-item__value" id="stat-co2" data-count="450">0</div>
+          <div class="stat-item__label">CO2 Ahorrado (kg)</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-item__icon stat-item__icon--gold"><i data-lucide="award" style="width:20px;height:20px"></i></div>
+          <div class="stat-item__value" id="stat-casos" data-count="184">0</div>
+          <div class="stat-item__label">Casos Exitosos</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Services ═══ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Nuestros Servicios</span>
+        <h2>Un Ecosistema Completo de Solidaridad</h2>
+        <p>Descubre las herramientas que ponemos a tu disposición para generar un impacto real y transparente.</p>
+      </div>
+      <div class="grid grid-4">
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="shopping-bag"></i></div>
+          <h3>Marketplace Solidario</h3>
+          <p>Compra y vende artículos donde cada transacción apoya a la comunidad.</p>
+          <a href="pages/marketplace.html" class="service-card__link">Explorar <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="gift"></i></div>
+          <h3>Centro de Donaciones</h3>
+          <p>Dona artículos, ropa o alimentos directamente a quienes más lo necesitan.</p>
+          <a href="pages/donaciones.html" class="service-card__link">Donar <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="credit-card"></i></div>
+          <h3>Credifast</h3>
+          <p>Microcréditos con enfoque social para impulsar emprendimientos locales.</p>
+          <a href="pages/credifast.html" class="service-card__link">Solicitar <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="heart"></i></div>
+          <h3>Casos Sociales</h3>
+          <p>Registra y apoya casos de necesidad urgente verificados por la comunidad.</p>
+          <a href="pages/casos.html" class="service-card__link">Ver casos <i data-lucide="arrow-right" style="width:16px;height:16px"></i></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ How It Works ═══ -->
+  <section class="section">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Cómo Funciona</span>
+        <h2>Tres Pasos para Transformar tu Comunidad</h2>
+        <p>Empezar a generar impacto es más sencillo de lo que piensas.</p>
+      </div>
+      <div class="grid grid-3">
+        <div class="step">
+          <div class="step__number step__number--1">1</div>
+          <h3>Regístrate</h3>
+          <p>Crea tu perfil en segundos y únete a nuestra red de confianza en Monte Plata.</p>
+        </div>
+        <div class="step">
+          <div class="step__number step__number--2">2</div>
+          <h3>Elige tu Acción</h3>
+          <p>Donar artículos, apoyar un caso social o comprar en el marketplace solidario.</p>
+        </div>
+        <div class="step">
+          <div class="step__number step__number--3">3</div>
+          <h3>Genera Impacto</h3>
+          <p>Mira cómo tu ayuda se traduce en resultados reales y transparentes.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Success Stories ═══ -->
+  <section class="section section--alt">
+    <div class="container">
+      <div class="section-header">
+        <span class="section-label">Historias Reales</span>
+        <h2>El Resultado de una Comunidad Unida</h2>
+        <p>Casos que hoy son un motivo de celebración gracias al esfuerzo colectivo.</p>
+      </div>
+      <div class="grid grid-2">
+        <!-- Story 1 -->
+        <div class="card">
+          <div style="position:relative">
+            <img src="https://images.unsplash.com/photo-1542810634-71277d95dcbb?w=800" alt="La Sonrisa de Sofía" class="card__img">
+            <span class="badge badge--green" style="position:absolute;top:12px;left:12px">Objetivo Logrado</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">La Sonrisa de Sofía</h3>
+            <p class="card__text mb-16">Gracias a los donantes, Sofía recibió sus audífonos y hoy puede escuchar la voz de su madre por primera vez.</p>
+            <div class="progress-track mb-8">
+              <div class="progress-fill" style="width:100%"></div>
+            </div>
+            <div class="flex justify-between" style="font-size:.8rem;font-weight:700;color:var(--green)">
+              <span>$4,500 Recaudados</span><span>100%</span>
+            </div>
+          </div>
+        </div>
+        <!-- Story 2 -->
+        <div class="card">
+          <div style="position:relative">
+            <img src="https://images.unsplash.com/photo-1488521787991-ed7bbaae773c?w=800" alt="Educación para el Futuro" class="card__img">
+            <span class="badge badge--green" style="position:absolute;top:12px;left:12px">Objetivo Logrado</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">Educación para el Futuro</h3>
+            <p class="card__text mb-16">Se logró la entrega de 50 tablets para la escuela rural de Monte Plata, eliminando la brecha digital.</p>
+            <div class="progress-track mb-8">
+              <div class="progress-fill" style="width:100%"></div>
+            </div>
+            <div class="flex justify-between" style="font-size:.8rem;font-weight:700;color:var(--green)">
+              <span>$8,200 Recaudados</span><span>100%</span>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-48">
+        <a href="pages/casos.html" class="btn btn--outline">Ver Todos los Casos</a>
+        <a href="pages/impacto.html" class="btn btn--primary" style="margin-left:12px">Historias de Impacto</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ CTA / Rewards ═══ -->
+  <section class="section" style="background:linear-gradient(135deg,var(--navy) 0%,var(--royal) 100%);color:var(--white);overflow:hidden;position:relative">
+    <div style="position:absolute;top:-60px;left:-60px;width:200px;height:200px;background:rgba(255,255,255,.04);border-radius:50%"></div>
+    <div style="position:absolute;bottom:-80px;right:-80px;width:300px;height:300px;background:rgba(255,255,255,.04);border-radius:50%"></div>
+    <div class="container" style="position:relative;z-index:2">
+      <div class="grid grid-2" style="align-items:center;gap:48px">
+        <div>
+          <span class="section-label" style="color:var(--gold)">Recompensas</span>
+          <h2 style="color:var(--white);font-size:clamp(1.75rem,3vw,2.5rem);margin-bottom:16px">Ayudar tiene sus Recompensas</h2>
+          <p style="color:rgba(255,255,255,.85);line-height:1.8;margin-bottom:28px">
+            En <strong>Ayuda a un Tercero</strong>, cada acción cuenta. Al donar, comprar o registrar casos, acumulas puntos de impacto y desbloqueas insignias exclusivas.
+          </p>
+          <div class="grid grid-2" style="gap:16px">
+            <div style="background:rgba(255,255,255,.08);padding:20px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.12)">
+              <i data-lucide="trophy" style="width:28px;height:28px;color:var(--gold);margin-bottom:10px"></i>
+              <h4 style="color:var(--white);font-family:var(--font-body);font-size:.95rem;margin-bottom:6px">Insignias Elite</h4>
+              <p style="font-size:.8rem;color:rgba(255,255,255,.65)">Reconocimiento público por tus metas logradas.</p>
+            </div>
+            <div style="background:rgba(255,255,255,.08);padding:20px;border-radius:var(--radius-md);border:1px solid rgba(255,255,255,.12)">
+              <i data-lucide="star" style="width:28px;height:28px;color:var(--gold);margin-bottom:10px"></i>
+              <h4 style="color:var(--white);font-family:var(--font-body);font-size:.95rem;margin-bottom:6px">Multiplicador</h4>
+              <p style="font-size:.8rem;color:rgba(255,255,255,.65)">Sube de nivel y obtén beneficios en el marketplace.</p>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--white);padding:36px;border-radius:var(--radius-xl);color:var(--navy)">
+          <h3 style="font-family:var(--font-body);font-size:1.15rem;font-weight:800;text-align:center;margin-bottom:24px;color:var(--navy)">Tus Próximos Logros</h3>
+          <div class="flex flex-col gap-20">
+            <div class="flex items-center gap-16">
+              <div style="width:48px;height:48px;background:linear-gradient(135deg,#FFD700,var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i data-lucide="medal" style="width:24px;height:24px;color:var(--white)"></i>
+              </div>
+              <div style="flex:1">
+                <div class="flex justify-between mb-8" style="font-size:.85rem">
+                  <span class="fw-700">Héroe Solidario (Nivel 5)</span>
+                  <span class="fw-800 text-green">85%</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill progress-fill--blue" style="width:85%"></div>
+                </div>
+              </div>
+            </div>
+            <div class="flex items-center gap-16" style="opacity:.45">
+              <div style="width:48px;height:48px;background:var(--gray-300);border-radius:50%;display:flex;align-items:center;justify-content:center;flex-shrink:0">
+                <i data-lucide="lock" style="width:20px;height:20px;color:var(--white)"></i>
+              </div>
+              <div style="flex:1">
+                <div class="flex justify-between mb-8" style="font-size:.85rem">
+                  <span class="fw-700">Guardian de la Comunidad</span>
+                  <span class="fw-800">Bloqueado</span>
+                </div>
+                <div class="progress-track">
+                  <div class="progress-fill progress-fill--blue" style="width:0%"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <a href="pages/logros.html" class="btn btn--primary btn--full mt-24">Ver Mi Progreso</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Contact ═══ -->
+  <section id="contacto" class="section" style="background:var(--navy);color:var(--white)">
+    <div class="container">
+      <div class="grid grid-2" style="gap:48px;align-items:center">
+        <div>
+          <span class="section-label" style="color:var(--gold)">Contacto</span>
+          <h2 style="color:var(--white);margin-bottom:16px">Contáctanos</h2>
+          <p style="color:rgba(255,255,255,.75);line-height:1.8;margin-bottom:28px">¿Tienes dudas o quieres proponer una alianza? Nuestro equipo está listo para escucharte.</p>
+          <div class="flex flex-col gap-20">
+            <div class="flex items-center gap-16">
+              <div style="width:44px;height:44px;background:rgba(255,255,255,.08);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center">
+                <i data-lucide="mail" style="width:20px;height:20px"></i>
+              </div>
+              <div>
+                <div class="fw-600" style="font-size:.9rem">Correo Electrónico</div>
+                <div style="color:rgba(255,255,255,.6);font-size:.85rem">info@ayudatercero.com</div>
+              </div>
+            </div>
+            <div class="flex items-center gap-16">
+              <div style="width:44px;height:44px;background:rgba(255,255,255,.08);border-radius:var(--radius-sm);display:flex;align-items:center;justify-content:center">
+                <i data-lucide="map-pin" style="width:20px;height:20px"></i>
+              </div>
+              <div>
+                <div class="fw-600" style="font-size:.9rem">Ubicación</div>
+                <div style="color:rgba(255,255,255,.6);font-size:.85rem">Monte Plata, República Dominicana</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div style="background:var(--white);padding:36px;border-radius:var(--radius-xl);box-shadow:var(--shadow-xl)">
+          <form onsubmit="event.preventDefault();showToast('Mensaje enviado. Nos pondremos en contacto pronto.')">
+            <div class="form-group">
+              <label class="form-label">Nombre</label>
+              <input type="text" class="form-control" placeholder="Tu nombre" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Correo</label>
+              <input type="email" class="form-control" placeholder="tu@correo.com" required>
+            </div>
+            <div class="form-group">
+              <label class="form-label">Mensaje</label>
+              <textarea class="form-control" placeholder="¿En qué podemos ayudarte?" rows="4" required style="resize:vertical"></textarea>
+            </div>
+            <button type="submit" class="btn btn--primary btn--full">Enviar Mensaje</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ═══ Footer ═══ -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="index.html" class="logo" style="margin-bottom:16px">
+            <i data-lucide="heart-handshake" style="color:var(--orange);width:24px;height:24px"></i>
+            Ayuda<span>Tercero</span>
+          </a>
+          <p>Liderando la revolución de la ayuda comunitaria a través de un ecosistema solidario justo y transparente.</p>
+        </div>
+        <div>
+          <h4>Recursos</h4>
+          <ul>
+            <li><a href="pages/casos.html">Casos sociales</a></li>
+            <li><a href="pages/reportes.html">Transparencia</a></li>
+            <li><a href="pages/socios.html">Socios</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Compañía</h4>
+          <ul>
+            <li><a href="pages/impacto.html">Impacto</a></li>
+            <li><a href="pages/reportes.html">Reportes</a></li>
+            <li><a href="#contacto">Contacto</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Legal</h4>
+          <ul>
+            <li><a href="pages/legal.html#privacidad">Privacidad</a></li>
+            <li><a href="pages/legal.html#terminos">Términos</a></li>
+            <li><a href="pages/legal.html#cookies">Cookies</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Ayuda a un Tercero. Todos los derechos reservados.</div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/db.js"></script>
+  <script src="assets/js/main.js"></script>
+  <script>
+    // Load stats from DB
+    window.addEventListener('DOMContentLoaded', () => {
+      const stats = DB.getStats();
+      document.getElementById('stat-vidas').dataset.count = stats.vidas_impactadas;
+      document.getElementById('stat-donaciones').dataset.count = stats.donaciones_totales;
+      document.getElementById('stat-co2').dataset.count = stats.co2_ahorrado;
+      document.getElementById('stat-casos').dataset.count = stats.casos_exitosos;
+      animateCounters();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Casos de Ayuda Social - Ayuda a un Tercero</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i> Ayuda<span>Tercero</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="donaciones.html">Donaciones</a>
+        <a href="credifast.html">Préstamos</a>
+        <a href="casos.html" class="active">Casos Sociales</a>
+        <a href="impacto.html">Impacto</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn--outline btn--sm">Iniciar Sesión</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Casos de Ayuda Social</h1>
+      <p>Descubre y apoya casos reales verificados por la comunidad. Cada aporte cuenta.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="page-content">
+    <div class="container">
+      <!-- Search -->
+      <div class="flex items-center gap-16 mb-24" style="flex-wrap:wrap">
+        <div class="search-box" style="flex:1;min-width:280px">
+          <span class="search-box__icon"><i data-lucide="search" style="width:18px;height:18px"></i></span>
+          <input type="text" placeholder="Buscar casos sociales..." id="csSearch">
+        </div>
+        <div class="chips">
+          <button class="chip active" onclick="filterCases('todos')">Todos</button>
+          <button class="chip" onclick="filterCases('medico')">Médico</button>
+          <button class="chip" onclick="filterCases('familiar')">Familiar</button>
+          <button class="chip" onclick="filterCases('educacion')">Educación</button>
+        </div>
+        <button class="btn btn--primary btn--sm" onclick="openModal('modalCase')">
+          <i data-lucide="plus" style="width:16px;height:16px"></i> Registrar Caso
+        </button>
+      </div>
+
+      <div class="layout-sidebar-3col">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <h3 class="sidebar__title">Filtros</h3>
+          <div class="mb-24">
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Categoría</h4>
+            <label class="sidebar__item"><input type="checkbox" checked> Emergencia Médica</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Ayuda Familiar</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Educación</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Vivienda</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Alimentación</label>
+          </div>
+          <div class="mb-24">
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Nivel de Confianza</h4>
+            <label class="sidebar__item"><input type="checkbox" checked> Gold</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Silver</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Bronze</label>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Urgencia</h4>
+            <label class="sidebar__item"><input type="checkbox" checked> Urgente (&lt; 3 días)</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Normal</label>
+          </div>
+        </aside>
+
+        <!-- Main -->
+        <section>
+          <div class="grid grid-2" id="casesGrid"></div>
+        </section>
+
+        <!-- Right Panel -->
+        <aside>
+          <div class="panel">
+            <h3 class="panel__title" style="font-size:.95rem;margin-bottom:16px">Mapa de Casos</h3>
+            <div class="map-container" id="casesMap" style="height:220px"></div>
+          </div>
+          <div class="panel">
+            <h3 class="panel__title" style="font-size:.95rem;margin-bottom:12px">Resumen</h3>
+            <div class="flex flex-col gap-12">
+              <div class="flex justify-between items-center">
+                <span style="font-size:.85rem;color:var(--text-secondary)">Casos Activos</span>
+                <span class="fw-800" style="color:var(--navy)" id="csActive">0</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span style="font-size:.85rem;color:var(--text-secondary)">Meta Recaudada</span>
+                <span class="fw-700 text-green" id="csRaised">$0</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span style="font-size:.85rem;color:var(--text-secondary)">Urgentes</span>
+                <span class="fw-700" style="color:var(--orange)" id="csUrgent">0</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Register Case Modal -->
+  <div class="modal-overlay" id="modalCase">
+    <div class="modal">
+      <div class="flex justify-between items-center mb-24">
+        <h3 class="modal__title" style="margin:0">Registrar Caso Social</h3>
+        <button onclick="closeModal('modalCase')" style="color:var(--gray-400);font-size:1.5rem">&times;</button>
+      </div>
+      <form onsubmit="event.preventDefault();submitCase()">
+        <div class="form-group">
+          <label class="form-label">Título del Caso</label>
+          <input type="text" class="form-control" id="csTitle" placeholder="Ej: Operación pediátrica urgente" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Categoría</label>
+            <select class="form-control" id="csCat">
+              <option value="medico">Emergencia Médica</option>
+              <option value="familiar">Ayuda Familiar</option>
+              <option value="educacion">Educación</option>
+              <option value="vivienda">Vivienda</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Meta (RD$)</label>
+            <input type="number" class="form-control" id="csMeta" placeholder="10000" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Descripción del Caso</label>
+          <textarea class="form-control" id="csDesc" rows="4" placeholder="Describe la situación con detalle..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Registrar Caso</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:24px;height:24px"></i> Ayuda<span>Tercero</span></a>
+          <p>Ecosistema solidario justo y transparente.</p>
+        </div>
+        <div><h4>Recursos</h4><ul><li><a href="casos.html">Casos sociales</a></li><li><a href="reportes.html">Transparencia</a></li></ul></div>
+        <div><h4>Compañía</h4><ul><li><a href="impacto.html">Impacto</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="legal.html#privacidad">Privacidad</a></li><li><a href="legal.html#terminos">Términos</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Ayuda a un Tercero.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/db.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function renderCases(filter) {
+      const casos = DB.getCasos();
+      const filtered = filter && filter !== 'todos' ? casos.filter(c => c.catKey === filter) : casos;
+      const grid = document.getElementById('casesGrid');
+
+      grid.innerHTML = filtered.map(c => {
+        const pct = Math.min(100, Math.round((c.raised/c.meta)*100));
+        return `
+        <div class="card">
+          <div style="position:relative">
+            <img src="${c.img}" alt="${c.titulo}" class="card__img" style="height:180px">
+            <span class="badge badge--blue" style="position:absolute;top:10px;left:10px">${c.categoria}</span>
+            ${c.daysLeft <= 3 ? '<span class="badge badge--red" style="position:absolute;top:10px;right:10px">Urgente</span>' : ''}
+          </div>
+          <div class="card__body">
+            <div class="flex justify-between items-center mb-8">
+              <h3 class="card__title" style="margin:0">${c.titulo}</h3>
+              <span class="badge badge--${c.trustLevel==='Gold'?'orange':c.trustLevel==='Silver'?'gray':'orange'}">${c.trustLevel}</span>
+            </div>
+            <p class="card__text mb-16">${c.story.substring(0,100)}...</p>
+            <div class="progress-track mb-8">
+              <div class="progress-fill ${pct>=100?'':'progress-fill--blue'}" style="width:${pct}%"></div>
+            </div>
+            <div class="flex justify-between" style="font-size:.78rem">
+              <span class="fw-700" style="color:var(--navy)">$${c.raised.toLocaleString()} / $${c.meta.toLocaleString()}</span>
+              <span class="text-muted">${c.daysLeft} días</span>
+            </div>
+            <button class="btn btn--primary btn--sm btn--full mt-16">Apoyar este Caso</button>
+          </div>
+        </div>`;
+      }).join('');
+
+      document.getElementById('csActive').textContent = filtered.length;
+      document.getElementById('csRaised').textContent = '$' + filtered.reduce((s,c) => s + c.raised, 0).toLocaleString();
+      document.getElementById('csUrgent').textContent = filtered.filter(c => c.daysLeft <= 3).length;
+    }
+
+    function filterCases(cat) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      event.target.classList.add('active');
+      renderCases(cat);
+    }
+
+    function submitCase() {
+      DB.saveCaso({
+        title: document.getElementById('csTitle').value,
+        desc: document.getElementById('csDesc').value,
+        catKey: document.getElementById('csCat').value,
+        meta: parseInt(document.getElementById('csMeta').value)
+      });
+      closeModal('modalCase');
+      renderCases();
+      showToast('Caso registrado. Será revisado pronto.');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCases();
+      const map = L.map('casesMap').setView([18.81,-69.78], 11);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'OSM' }).addTo(map);
+      L.marker([18.81,-69.78]).addTo(map).bindPopup('Monte Plata');
+    });
+  </script>
+</body>
+</html>

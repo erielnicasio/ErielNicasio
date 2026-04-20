@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Centro de Donaciones - Ayuda a un Tercero</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i> Ayuda<span>Tercero</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="donaciones.html" class="active">Donaciones</a>
+        <a href="credifast.html">Préstamos</a>
+        <a href="casos.html">Casos Sociales</a>
+        <a href="impacto.html">Impacto</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn--outline btn--sm">Iniciar Sesión</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Centro de Donaciones</h1>
+      <p>Dona artículos, ropa o alimentos. Tu generosidad transforma vidas en Monte Plata.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="page-content">
+    <div class="container">
+      <!-- Search -->
+      <div class="flex items-center gap-16 mb-24" style="flex-wrap:wrap">
+        <div class="search-box" style="flex:1;min-width:280px">
+          <span class="search-box__icon"><i data-lucide="search" style="width:18px;height:18px"></i></span>
+          <input type="text" placeholder="Buscar donaciones disponibles..." id="dnSearch">
+        </div>
+        <button class="btn btn--primary btn--sm" onclick="openModal('modalDonate')">
+          <i data-lucide="plus" style="width:16px;height:16px"></i> Registrar Donación
+        </button>
+      </div>
+
+      <div class="layout-sidebar-3col">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+          <h3 class="sidebar__title">Filtros</h3>
+          <div class="mb-24">
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Categoría</h4>
+            <label class="sidebar__item"><input type="checkbox" checked> Ropa</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Alimentos</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Útiles Escolares</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Muebles</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Medicinas</label>
+          </div>
+          <div class="mb-24">
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Estado</h4>
+            <label class="sidebar__item"><input type="checkbox" checked> Aprobado</label>
+            <label class="sidebar__item"><input type="checkbox" checked> En Revisión</label>
+            <label class="sidebar__item"><input type="checkbox"> Entregado</label>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Distancia</h4>
+            <input type="range" min="1" max="50" value="25">
+            <div class="text-muted" style="font-size:.8rem;margin-top:6px">Radio: 25 km</div>
+          </div>
+        </aside>
+
+        <!-- Main -->
+        <section>
+          <h2 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700;color:var(--navy);margin-bottom:16px">Donaciones Disponibles</h2>
+          <div class="grid grid-2" id="dnGrid"></div>
+        </section>
+
+        <!-- Right Panel -->
+        <aside>
+          <div class="panel">
+            <h3 class="panel__title" style="font-size:.95rem;margin-bottom:16px">Mapa de Donaciones</h3>
+            <div class="map-container" id="dnMap" style="height:220px"></div>
+          </div>
+          <div class="panel">
+            <h3 class="panel__title" style="font-size:.95rem;margin-bottom:12px">Resumen</h3>
+            <div class="flex flex-col gap-12">
+              <div class="flex justify-between items-center">
+                <span style="font-size:.85rem;color:var(--text-secondary)">Total Donaciones</span>
+                <span class="fw-800" style="color:var(--navy)" id="dnTotal">0</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span style="font-size:.85rem;color:var(--text-secondary)">Aprobadas</span>
+                <span class="fw-700 text-green" id="dnApproved">0</span>
+              </div>
+              <div class="flex justify-between items-center">
+                <span style="font-size:.85rem;color:var(--text-secondary)">En Revisión</span>
+                <span class="fw-700 text-orange" id="dnPending">0</span>
+              </div>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Donate Modal -->
+  <div class="modal-overlay" id="modalDonate">
+    <div class="modal">
+      <div class="flex justify-between items-center mb-24">
+        <h3 class="modal__title" style="margin:0">Registrar Donación</h3>
+        <button onclick="closeModal('modalDonate')" style="color:var(--gray-400);font-size:1.5rem">&times;</button>
+      </div>
+      <form onsubmit="event.preventDefault();submitDonation()">
+        <div class="form-group">
+          <label class="form-label">Título de la Donación</label>
+          <input type="text" class="form-control" id="dnTitle" placeholder="Ej: Lote de abrigos" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Categoría</label>
+            <select class="form-control" id="dnCat">
+              <option value="ropa">Ropa</option>
+              <option value="alimentos">Alimentos</option>
+              <option value="útil">Útiles Escolares</option>
+              <option value="muebles">Muebles</option>
+              <option value="medicinas">Medicinas</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Celular</label>
+            <input type="tel" class="form-control" id="dnPhone" placeholder="809-555-0001" required>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tu Nombre</label>
+          <input type="text" class="form-control" id="dnName" placeholder="Nombre completo" required>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Descripción</label>
+          <textarea class="form-control" id="dnDesc" rows="3" placeholder="Describe lo que deseas donar..." required></textarea>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Registrar Donación</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:24px;height:24px"></i> Ayuda<span>Tercero</span></a>
+          <p>Ecosistema solidario justo y transparente.</p>
+        </div>
+        <div><h4>Recursos</h4><ul><li><a href="casos.html">Casos sociales</a></li><li><a href="reportes.html">Transparencia</a></li></ul></div>
+        <div><h4>Compañía</h4><ul><li><a href="impacto.html">Impacto</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="legal.html#privacidad">Privacidad</a></li><li><a href="legal.html#terminos">Términos</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Ayuda a un Tercero.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/db.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    const sampleDonations = [
+      { id:'DN-001', title:'Lote de Abrigos Infantiles', cat:'ropa', donor:'Carlos Valenzuela', status:'Aprobado', img:'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600', loc:[18.81,-69.78] },
+      { id:'DN-002', title:'Libros Escolares (30 unidades)', cat:'útil', donor:'Marta R.', status:'En Revisión', img:'https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=600', loc:[18.82,-69.79] },
+      { id:'DN-003', title:'Canasta de Alimentos No Perecederos', cat:'alimentos', donor:'Ana López', status:'Aprobado', img:'https://images.unsplash.com/photo-1488459716781-31db52582fe9?w=600', loc:[18.808,-69.775] },
+      { id:'DN-004', title:'Medicinas Básicas (Botiquín)', cat:'medicinas', donor:'Dr. Ramírez', status:'Aprobado', img:'https://images.unsplash.com/photo-1584308666744-24d5c474f2ae?w=600', loc:[18.815,-69.785] },
+      { id:'DN-005', title:'Mesa y 4 Sillas de Madera', cat:'muebles', donor:'José M.', status:'En Revisión', img:'https://images.unsplash.com/photo-1555041469-a586c61ea9bc?w=600', loc:[18.825,-69.795] },
+      { id:'DN-006', title:'Zapatos Deportivos (Tallas variadas)', cat:'ropa', donor:'Laura T.', status:'Aprobado', img:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600', loc:[18.80,-69.77] }
+    ];
+
+    function renderDonations() {
+      const grid = document.getElementById('dnGrid');
+      grid.innerHTML = sampleDonations.map(d => `
+        <div class="card">
+          <div style="position:relative">
+            <img src="${d.img}" alt="${d.title}" class="card__img" style="height:180px">
+            <span class="badge ${d.status==='Aprobado'?'badge--green':'badge--orange'}" style="position:absolute;top:10px;left:10px">${d.status}</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">${d.title}</h3>
+            <div class="flex justify-between items-center mt-8">
+              <span class="badge badge--gray">${d.cat}</span>
+              <span style="font-size:.78rem;color:var(--text-muted)">${d.donor}</span>
+            </div>
+            <button class="btn btn--secondary btn--sm btn--full mt-16">Solicitar</button>
+          </div>
+        </div>
+      `).join('');
+
+      document.getElementById('dnTotal').textContent = sampleDonations.length;
+      document.getElementById('dnApproved').textContent = sampleDonations.filter(d=>d.status==='Aprobado').length;
+      document.getElementById('dnPending').textContent = sampleDonations.filter(d=>d.status==='En Revisión').length;
+    }
+
+    function submitDonation() {
+      DB.saveDonacion({
+        nombre: document.getElementById('dnName').value,
+        titulo: document.getElementById('dnTitle').value,
+        categoria: document.getElementById('dnCat').value,
+        celular: document.getElementById('dnPhone').value
+      });
+      closeModal('modalDonate');
+      showToast('Donación registrada exitosamente.');
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderDonations();
+      const map = L.map('dnMap').setView([18.81,-69.78], 12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'OSM' }).addTo(map);
+      sampleDonations.forEach(d => { if(d.loc) L.marker(d.loc).addTo(map).bindPopup(d.title); });
+    });
+  </script>
+</body>
+</html>
