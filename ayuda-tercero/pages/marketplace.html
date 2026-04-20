@@ -50,11 +50,11 @@
           <input type="text" placeholder="Buscar artículos solidarios..." id="mkSearch">
         </div>
         <div class="chips">
-          <button class="chip active" onclick="filterMK('todos')">Todos</button>
-          <button class="chip" onclick="filterMK('ropa')">Ropa</button>
-          <button class="chip" onclick="filterMK('electronica')">Electrónica</button>
-          <button class="chip" onclick="filterMK('hogar')">Hogar</button>
-          <button class="chip" onclick="filterMK('salud')">Salud</button>
+          <button class="chip active" onclick="filterMK('todos', event)">Todos</button>
+          <button class="chip" onclick="filterMK('ropa', event)">Ropa</button>
+          <button class="chip" onclick="filterMK('electronica', event)">Electrónica</button>
+          <button class="chip" onclick="filterMK('hogar', event)">Hogar</button>
+          <button class="chip" onclick="filterMK('salud', event)">Salud</button>
         </div>
       </div>
 
@@ -212,9 +212,9 @@
       `).join('');
     }
 
-    function filterMK(cat) {
+    function filterMK(cat, e) {
       document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
-      event.target.classList.add('active');
+      if (e) e.target.classList.add('active');
       if (cat === 'todos') { renderMK(sampleItems); return; }
       renderMK(sampleItems.filter(i => i.cat === cat));
     }
