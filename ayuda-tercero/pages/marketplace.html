@@ -212,11 +212,20 @@
       `).join('');
     }
 
+    function getAllMKItems() {
+      const dbItems = DB.getMarketplace().map(i => ({
+        id: i.id, title: i.titulo, price: i.precio, cat: 'otro', seller: i.nombre, status: i.status,
+        img: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?w=600', loc: [18.81, -69.78]
+      }));
+      return [...sampleItems, ...dbItems];
+    }
+
     function filterMK(cat, e) {
       document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
       if (e) e.target.classList.add('active');
-      if (cat === 'todos') { renderMK(sampleItems); return; }
-      renderMK(sampleItems.filter(i => i.cat === cat));
+      const all = getAllMKItems();
+      if (cat === 'todos') { renderMK(all); return; }
+      renderMK(all.filter(i => i.cat === cat));
     }
 
     function publishItem() {
@@ -230,11 +239,12 @@
       DB.saveMarketplace(item);
       closeModal('modalPublish');
       showToast('Artículo publicado. Será revisado pronto.');
+      renderMK(getAllMKItems());
     }
 
     // Init map
     window.addEventListener('DOMContentLoaded', () => {
-      renderMK(sampleItems);
+      renderMK(getAllMKItems());
       const map = L.map('mkMap').setView([18.81,-69.78], 12);
       L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'OSM' }).addTo(map);
       sampleItems.forEach(i => { if(i.loc) L.marker(i.loc).addTo(map).bindPopup(i.title); });

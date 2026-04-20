@@ -182,9 +182,18 @@
       { id:'DN-006', title:'Zapatos Deportivos (Tallas variadas)', cat:'ropa', donor:'Laura T.', status:'Aprobado', img:'https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=600', loc:[18.80,-69.77] }
     ];
 
+    function getAllDonations() {
+      const dbItems = DB.getDonaciones().map(d => ({
+        id: d.id, title: d.titulo, cat: d.categoria, donor: d.nombre, status: d.status,
+        img: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?w=600', loc: [18.81, -69.78]
+      }));
+      return [...sampleDonations, ...dbItems];
+    }
+
     function renderDonations() {
+      const all = getAllDonations();
       const grid = document.getElementById('dnGrid');
-      grid.innerHTML = sampleDonations.map(d => `
+      grid.innerHTML = all.map(d => `
         <div class="card">
           <div style="position:relative">
             <img src="${d.img}" alt="${d.title}" class="card__img" style="height:180px">
@@ -201,9 +210,9 @@
         </div>
       `).join('');
 
-      document.getElementById('dnTotal').textContent = sampleDonations.length;
-      document.getElementById('dnApproved').textContent = sampleDonations.filter(d=>d.status==='Aprobado').length;
-      document.getElementById('dnPending').textContent = sampleDonations.filter(d=>d.status==='En Revisión').length;
+      document.getElementById('dnTotal').textContent = all.length;
+      document.getElementById('dnApproved').textContent = all.filter(d=>d.status==='Aprobado').length;
+      document.getElementById('dnPending').textContent = all.filter(d=>d.status==='En Revisión').length;
     }
 
     function submitDonation() {
@@ -215,6 +224,7 @@
       });
       closeModal('modalDonate');
       showToast('Donación registrada exitosamente.');
+      renderDonations();
     }
 
     window.addEventListener('DOMContentLoaded', () => {
