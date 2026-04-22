@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Panel de Administración - Ayuda a un Tercero</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i> Ayuda<span>Tercero</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="donaciones.html">Donaciones</a>
+        <a href="credifast.html">Préstamos</a>
+        <a href="casos.html">Casos Sociales</a>
+        <a href="impacto.html">Impacto</a>
+        <a href="login.html" class="mobile-only">Iniciar Sesión</a>
+        <a href="admin.html" class="mobile-only">Admin</a>
+      </div>
+      <div class="nav-actions">
+        <a href="perfil.html" class="btn btn--outline btn--sm">Mi Perfil</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Content -->
+  <main class="page-content">
+    <div class="container">
+      <div class="layout-sidebar">
+        <!-- Admin Sidebar -->
+        <aside class="admin-nav">
+          <div style="padding:12px 14px;margin-bottom:8px">
+            <div class="fw-800" style="font-size:1rem;color:var(--navy)">Admin Panel</div>
+            <div style="font-size:.75rem;color:var(--text-muted)">Gestión General</div>
+          </div>
+          <div class="admin-nav__item active" onclick="showView('dashboard', event)"><i data-lucide="layout-dashboard" style="width:18px;height:18px"></i> Dashboard</div>
+          <div class="admin-nav__item" onclick="showView('prestamos', event)"><i data-lucide="credit-card" style="width:18px;height:18px"></i> Préstamos</div>
+          <div class="admin-nav__item" onclick="showView('marketplace', event)"><i data-lucide="shopping-bag" style="width:18px;height:18px"></i> Marketplace</div>
+          <div class="admin-nav__item" onclick="showView('donaciones', event)"><i data-lucide="gift" style="width:18px;height:18px"></i> Donaciones</div>
+          <div class="admin-nav__item" onclick="showView('casos', event)"><i data-lucide="heart" style="width:18px;height:18px"></i> Casos</div>
+          <div class="admin-nav__item" onclick="showView('reportes', event)"><i data-lucide="bar-chart-2" style="width:18px;height:18px"></i> Reportes</div>
+        </aside>
+
+        <!-- Main Content -->
+        <section class="admin-main">
+
+          <!-- Dashboard View -->
+          <div class="admin-view active" id="view-dashboard">
+            <div class="flex justify-between items-center mb-24">
+              <div>
+                <h1 style="font-family:var(--font-body);font-size:1.5rem;font-weight:800;color:var(--navy)">Dashboard</h1>
+                <p class="text-muted" style="font-size:.85rem">Resumen general de la plataforma</p>
+              </div>
+              <span class="badge badge--green">En Línea</span>
+            </div>
+
+            <!-- KPIs -->
+            <div class="grid grid-4 mb-24">
+              <div class="kpi-card">
+                <div class="kpi-card__label">Préstamos Activos</div>
+                <div class="kpi-card__value" id="kpi-loans">0</div>
+                <div class="kpi-card__trend kpi-card__trend--up">+12%</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-card__label">Artículos en Marketplace</div>
+                <div class="kpi-card__value" id="kpi-market">0</div>
+                <div class="kpi-card__trend kpi-card__trend--up">+8%</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-card__label">Donaciones</div>
+                <div class="kpi-card__value" id="kpi-donations">0</div>
+                <div class="kpi-card__trend kpi-card__trend--up">+15%</div>
+              </div>
+              <div class="kpi-card">
+                <div class="kpi-card__label">Casos Activos</div>
+                <div class="kpi-card__value" id="kpi-cases">0</div>
+                <div class="kpi-card__trend kpi-card__trend--down">-3%</div>
+              </div>
+            </div>
+
+            <!-- Chart -->
+            <div class="panel mb-24">
+              <div class="panel__header">
+                <h3 class="panel__title">Actividad Semanal</h3>
+                <span class="text-muted" style="font-size:.8rem">Últimos 7 días</span>
+              </div>
+              <div class="chart-bars">
+                <div class="bar" style="height:60%"></div>
+                <div class="bar" style="height:80%"></div>
+                <div class="bar" style="height:45%"></div>
+                <div class="bar" style="height:90%"></div>
+                <div class="bar" style="height:70%"></div>
+                <div class="bar" style="height:55%"></div>
+                <div class="bar" style="height:85%;background:var(--orange)"></div>
+              </div>
+              <div class="flex justify-between text-muted mt-8" style="font-size:.72rem">
+                <span>Lun</span><span>Mar</span><span>Mié</span><span>Jue</span><span>Vie</span><span>Sáb</span><span>Dom</span>
+              </div>
+            </div>
+
+            <!-- Recent Activity -->
+            <div class="panel">
+              <div class="panel__header">
+                <h3 class="panel__title">Actividad Reciente</h3>
+              </div>
+              <div id="recentActivity"></div>
+            </div>
+          </div>
+
+          <!-- Prestamos View -->
+          <div class="admin-view" id="view-prestamos">
+            <h2 style="font-family:var(--font-body);font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:20px">Gestión de Préstamos</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>ID</th><th>Solicitante</th><th>Tipo</th><th>Score</th><th>Monto</th><th>Estado</th><th>Acción</th></tr></thead>
+                <tbody id="adminLoans"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Marketplace View -->
+          <div class="admin-view" id="view-marketplace">
+            <h2 style="font-family:var(--font-body);font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:20px">Gestión de Marketplace</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>ID</th><th>Vendedor</th><th>Artículo</th><th>Precio</th><th>Estado</th><th>Acción</th></tr></thead>
+                <tbody id="adminMarket"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Donaciones View -->
+          <div class="admin-view" id="view-donaciones">
+            <h2 style="font-family:var(--font-body);font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:20px">Gestión de Donaciones</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>ID</th><th>Donante</th><th>Artículo</th><th>Categoría</th><th>Estado</th><th>Acción</th></tr></thead>
+                <tbody id="adminDonations"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Casos View -->
+          <div class="admin-view" id="view-casos">
+            <h2 style="font-family:var(--font-body);font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:20px">Gestión de Casos Sociales</h2>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>ID</th><th>Título</th><th>Categoría</th><th>Meta</th><th>Recaudado</th><th>Estado</th><th>Acción</th></tr></thead>
+                <tbody id="adminCases"></tbody>
+              </table>
+            </div>
+          </div>
+
+          <!-- Reportes View -->
+          <div class="admin-view" id="view-reportes">
+            <h2 style="font-family:var(--font-body);font-size:1.3rem;font-weight:800;color:var(--navy);margin-bottom:20px">Reportes y Estadísticas</h2>
+            <div class="grid grid-2 mb-24">
+              <div class="panel text-center">
+                <div style="font-size:2.5rem;font-weight:800;color:var(--navy)">$145,280</div>
+                <div class="text-muted" style="font-size:.85rem">Fondos Totales Recaudados</div>
+              </div>
+              <div class="panel text-center">
+                <div style="font-size:2.5rem;font-weight:800;color:var(--green)">85%</div>
+                <div class="text-muted" style="font-size:.85rem">Tasa de Éxito</div>
+              </div>
+            </div>
+            <div class="panel">
+              <div class="panel__header">
+                <h3 class="panel__title">Distribución por Categoría</h3>
+              </div>
+              <div class="chart-bars" style="height:120px">
+                <div class="bar" style="height:90%;background:var(--royal)"></div>
+                <div class="bar" style="height:70%;background:var(--orange)"></div>
+                <div class="bar" style="height:50%;background:var(--green)"></div>
+                <div class="bar" style="height:30%;background:var(--gold)"></div>
+              </div>
+              <div class="flex justify-between text-muted mt-8" style="font-size:.72rem">
+                <span>Préstamos</span><span>Marketplace</span><span>Donaciones</span><span>Casos</span>
+              </div>
+            </div>
+          </div>
+
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="../assets/js/db.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    function showView(view, e) {
+      document.querySelectorAll('.admin-view').forEach(v => v.classList.remove('active'));
+      document.querySelectorAll('.admin-nav__item').forEach(n => n.classList.remove('active'));
+      document.getElementById('view-' + view).classList.add('active');
+      if (e) e.target.closest('.admin-nav__item').classList.add('active');
+      loadAdminData();
+    }
+
+    function statusBadge(status) {
+      const map = { 'Aprobado':'green', 'Pendiente':'orange', 'En Revisión':'orange', 'Rechazado':'red', 'Reportado':'red' };
+      return `<span class="badge badge--${map[status]||'gray'}">${status}</span>`;
+    }
+
+    function actionBtns(module, id) {
+      return `<div class="flex gap-8">
+        <button class="btn btn--green btn--sm" onclick="updateStatus('${module}','${id}','Aprobado')" style="padding:4px 10px;font-size:.75rem">Aprobar</button>
+        <button class="btn btn--sm" onclick="updateStatus('${module}','${id}','Rechazado')" style="padding:4px 10px;font-size:.75rem;background:#FEE2E2;color:#DC2626">Rechazar</button>
+      </div>`;
+    }
+
+    function updateStatus(module, id, status) {
+      if (module === 'prestamos') DB.updatePrestamoStatus(id, status);
+      else if (module === 'marketplace') DB.updateMarketplaceStatus(id, status);
+      else if (module === 'donaciones') DB.updateDonacionStatus(id, status);
+      else if (module === 'casos') DB.updateCasoStatus(id, status);
+      loadAdminData();
+      showToast(`Estado actualizado a: ${status}`);
+    }
+
+    function loadAdminData() {
+      const loans = DB.getPrestamos();
+      const market = DB.getMarketplace();
+      const donations = DB.getDonaciones();
+      const cases = DB.getCasos();
+
+      document.getElementById('kpi-loans').textContent = loans.length;
+      document.getElementById('kpi-market').textContent = market.length;
+      document.getElementById('kpi-donations').textContent = donations.length;
+      document.getElementById('kpi-cases').textContent = cases.length;
+
+      document.getElementById('adminLoans').innerHTML = loans.map(l =>
+        `<tr><td><strong>${l.id}</strong></td><td>${l.nombre}</td><td>${l.tipo}</td><td>${l.score||'N/A'}</td><td>${l.monto||'-'}</td><td>${statusBadge(l.status)}</td><td>${actionBtns('prestamos',l.id)}</td></tr>`
+      ).join('');
+
+      document.getElementById('adminMarket').innerHTML = market.map(m =>
+        `<tr><td><strong>${m.id}</strong></td><td>${m.nombre}</td><td>${m.titulo}</td><td>${m.precio}</td><td>${statusBadge(m.status)}</td><td>${actionBtns('marketplace',m.id)}</td></tr>`
+      ).join('');
+
+      document.getElementById('adminDonations').innerHTML = donations.map(d =>
+        `<tr><td><strong>${d.id}</strong></td><td>${d.nombre}</td><td>${d.titulo}</td><td>${d.categoria}</td><td>${statusBadge(d.status)}</td><td>${actionBtns('donaciones',d.id)}</td></tr>`
+      ).join('');
+
+      document.getElementById('adminCases').innerHTML = cases.map(c =>
+        `<tr><td><strong>${c.id}</strong></td><td>${c.titulo}</td><td>${c.categoria}</td><td>$${(c.meta||0).toLocaleString()}</td><td>$${(c.raised||0).toLocaleString()}</td><td>${statusBadge(c.status)}</td><td>${actionBtns('casos',c.id)}</td></tr>`
+      ).join('');
+
+      document.getElementById('recentActivity').innerHTML = [
+        ...loans.slice(-2).map(l => `<div class="flex items-center gap-12" style="padding:12px 0;border-bottom:1px solid var(--gray-100)"><i data-lucide="credit-card" style="width:16px;height:16px;color:var(--royal)"></i><span style="font-size:.85rem">${l.nombre} solicitó un préstamo ${l.tipo}</span><span class="badge badge--orange" style="margin-left:auto">${l.status}</span></div>`),
+        ...donations.slice(-2).map(d => `<div class="flex items-center gap-12" style="padding:12px 0;border-bottom:1px solid var(--gray-100)"><i data-lucide="gift" style="width:16px;height:16px;color:var(--green)"></i><span style="font-size:.85rem">${d.nombre} donó: ${d.titulo}</span><span class="badge badge--green" style="margin-left:auto">${d.status}</span></div>`)
+      ].join('');
+      lucide.createIcons();
+    }
+
+    window.addEventListener('DOMContentLoaded', loadAdminData);
+  </script>
+</body>
+</html>

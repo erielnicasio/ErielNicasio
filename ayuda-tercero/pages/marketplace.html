@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Marketplace Solidario - Ayuda a un Tercero</title>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" crossorigin="">
+  <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" crossorigin=""></script>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i> Ayuda<span>Tercero</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="marketplace.html" class="active">Marketplace</a>
+        <a href="donaciones.html">Donaciones</a>
+        <a href="credifast.html">Préstamos</a>
+        <a href="casos.html">Casos Sociales</a>
+        <a href="impacto.html">Impacto</a>
+        <a href="login.html" class="mobile-only">Iniciar Sesión</a>
+        <a href="admin.html" class="mobile-only">Admin</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn--outline btn--sm">Iniciar Sesión</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1>Marketplace Solidario</h1>
+      <p>Compra, vende o dona artículos. Cada transacción fortalece nuestra comunidad.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="page-content">
+    <div class="container">
+      <!-- Toolbar -->
+      <div class="flex items-center gap-16 mb-24" style="flex-wrap:wrap">
+        <div class="search-box" style="flex:1;min-width:280px">
+          <span class="search-box__icon"><i data-lucide="search" style="width:18px;height:18px"></i></span>
+          <input type="text" placeholder="Buscar artículos solidarios..." id="mkSearch">
+        </div>
+        <div class="chips">
+          <button class="chip active" onclick="filterMK('todos', event)">Todos</button>
+          <button class="chip" onclick="filterMK('ropa', event)">Ropa</button>
+          <button class="chip" onclick="filterMK('electronica', event)">Electrónica</button>
+          <button class="chip" onclick="filterMK('hogar', event)">Hogar</button>
+          <button class="chip" onclick="filterMK('salud', event)">Salud</button>
+        </div>
+      </div>
+
+      <div class="layout-sidebar-3col">
+        <!-- Sidebar Filters -->
+        <aside class="sidebar">
+          <h3 class="sidebar__title">Filtros</h3>
+          <div class="mb-24">
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Categoría</h4>
+            <label class="sidebar__item"><input type="checkbox" checked> Ropa y Calzado</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Electrónica</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Hogar</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Salud</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Educación</label>
+          </div>
+          <div class="mb-24">
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Estado</h4>
+            <label class="sidebar__item"><input type="checkbox" checked> Nuevo</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Usado - Buen Estado</label>
+            <label class="sidebar__item"><input type="checkbox" checked> Para Reparar</label>
+          </div>
+          <div>
+            <h4 style="font-family:var(--font-body);font-size:.85rem;font-weight:700;color:var(--navy);margin-bottom:12px">Distancia</h4>
+            <input type="range" min="1" max="50" value="25" id="distRange">
+            <div class="text-muted" style="font-size:.8rem;margin-top:6px">Radio: <span id="distVal">25</span> km</div>
+          </div>
+        </aside>
+
+        <!-- Main Grid -->
+        <section>
+          <div class="flex justify-between items-center mb-16">
+            <h2 style="font-family:var(--font-body);font-size:1.1rem;font-weight:700;color:var(--navy)">Artículos Disponibles</h2>
+            <button class="btn btn--primary btn--sm" onclick="openModal('modalPublish')">
+              <i data-lucide="plus" style="width:16px;height:16px"></i> Publicar Artículo
+            </button>
+          </div>
+          <div class="grid grid-2" id="mkGrid">
+            <!-- JS populated -->
+          </div>
+        </section>
+
+        <!-- Right Panel -->
+        <aside>
+          <div class="panel">
+            <h3 class="panel__title" style="font-size:.95rem;margin-bottom:16px">Mapa de Artículos</h3>
+            <div class="map-container" id="mkMap" style="height:220px"></div>
+          </div>
+          <div class="panel">
+            <h3 class="panel__title" style="font-size:.95rem;margin-bottom:12px">Publicaciones Recientes</h3>
+            <div id="mkRecent" class="flex flex-col gap-12"></div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <!-- Publish Modal -->
+  <div class="modal-overlay" id="modalPublish">
+    <div class="modal">
+      <div class="flex justify-between items-center mb-24">
+        <h3 class="modal__title" style="margin:0">Publicar Artículo</h3>
+        <button onclick="closeModal('modalPublish')" style="color:var(--gray-400);font-size:1.5rem">&times;</button>
+      </div>
+      <form onsubmit="event.preventDefault();publishItem()">
+        <div class="form-group">
+          <label class="form-label">Título del Artículo</label>
+          <input type="text" class="form-control" id="mkTitle" placeholder="Ej: Silla de ruedas eléctrica" required>
+        </div>
+        <div class="form-row">
+          <div class="form-group">
+            <label class="form-label">Precio (RD$)</label>
+            <input type="number" class="form-control" id="mkPrice" placeholder="0.00" required>
+          </div>
+          <div class="form-group">
+            <label class="form-label">Categoría</label>
+            <select class="form-control" id="mkCat">
+              <option value="ropa">Ropa y Calzado</option>
+              <option value="electronica">Electrónica</option>
+              <option value="hogar">Hogar</option>
+              <option value="salud">Salud</option>
+              <option value="educacion">Educación</option>
+            </select>
+          </div>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Descripción</label>
+          <textarea class="form-control" id="mkDesc" rows="3" placeholder="Describe el artículo..." required></textarea>
+        </div>
+        <div class="form-group">
+          <label class="form-label">Tu Nombre</label>
+          <input type="text" class="form-control" id="mkName" placeholder="Nombre completo" required>
+        </div>
+        <button type="submit" class="btn btn--primary btn--full">Publicar</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:24px;height:24px"></i> Ayuda<span>Tercero</span></a>
+          <p>Ecosistema solidario justo y transparente.</p>
+        </div>
+        <div><h4>Recursos</h4><ul><li><a href="casos.html">Casos sociales</a></li><li><a href="reportes.html">Transparencia</a></li></ul></div>
+        <div><h4>Compañía</h4><ul><li><a href="impacto.html">Impacto</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="legal.html#privacidad">Privacidad</a></li><li><a href="legal.html#terminos">Términos</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Ayuda a un Tercero.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/db.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    // Sample items
+    const sampleItems = [
+      { id:'MK-001', title:'Silla de Ruedas Eléctrica', price:'$450.00', cat:'salud', img:'https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?w=600', seller:'Pedro Santos', status:'Disponible', loc:[18.81,-69.78] },
+      { id:'MK-002', title:'Tablets Educativas (Lote 10)', price:'$1,200.00', cat:'electronica', img:'https://images.unsplash.com/photo-1544244015-0df4b3ffc6b0?w=600', seller:'Ana López', status:'Disponible', loc:[18.82,-69.79] },
+      { id:'MK-003', title:'Ropa Infantil - Pack 20 piezas', price:'$0.00', cat:'ropa', img:'https://images.unsplash.com/photo-1489987707025-afc232f7ea0f?w=600', seller:'María R.', status:'Donación', loc:[18.80,-69.77] },
+      { id:'MK-004', title:'Juego de Utensilios de Cocina', price:'$85.00', cat:'hogar', img:'https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=600', seller:'Carlos V.', status:'Disponible', loc:[18.815,-69.785] },
+      { id:'MK-005', title:'Libros Escolares Usados', price:'$0.00', cat:'educacion', img:'https://images.unsplash.com/photo-1524578271613-d550eacf6090?w=600', seller:'Laura T.', status:'Donación', loc:[18.808,-69.775] },
+      { id:'MK-006', title:'Muletas Ajustables', price:'$35.00', cat:'salud', img:'https://images.unsplash.com/photo-1631815588090-d4bfec5b1b89?w=600', seller:'José M.', status:'Disponible', loc:[18.825,-69.795] }
+    ];
+
+    function renderMK(items) {
+      const grid = document.getElementById('mkGrid');
+      grid.innerHTML = items.map(i => `
+        <div class="card">
+          <div style="position:relative">
+            <img src="${i.img}" alt="${i.title}" class="card__img" style="height:180px">
+            <span class="badge ${i.status==='Donación'?'badge--green':'badge--blue'}" style="position:absolute;top:10px;left:10px">${i.status}</span>
+          </div>
+          <div class="card__body">
+            <h3 class="card__title">${i.title}</h3>
+            <div class="flex justify-between items-center mt-8">
+              <span style="font-weight:800;font-size:1.1rem;color:var(--navy)">${i.price === '$0.00' ? 'Gratis' : i.price}</span>
+              <span style="font-size:.78rem;color:var(--text-muted)">${i.seller}</span>
+            </div>
+            <button class="btn btn--primary btn--sm btn--full mt-16">Contactar</button>
+          </div>
+        </div>
+      `).join('');
+
+      const recent = document.getElementById('mkRecent');
+      recent.innerHTML = items.slice(0,3).map(i => `
+        <div class="flex items-center gap-12" style="padding:8px 0;border-bottom:1px solid var(--gray-100)">
+          <img src="${i.img}" alt="${i.title}" style="width:40px;height:40px;border-radius:var(--radius-sm);object-fit:cover">
+          <div>
+            <div style="font-size:.8rem;font-weight:600;color:var(--navy)">${i.title}</div>
+            <div style="font-size:.72rem;color:var(--text-muted)">${i.seller}</div>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function getAllMKItems() {
+      const dbItems = DB.getMarketplace().map(i => ({
+        id: i.id, title: i.titulo, price: i.precio, cat: 'otro', seller: i.nombre, status: i.status,
+        img: 'https://images.unsplash.com/photo-1532629345422-7515f3d16bb0?w=600', loc: [18.81, -69.78]
+      }));
+      return [...sampleItems, ...dbItems];
+    }
+
+    function filterMK(cat, e) {
+      document.querySelectorAll('.chip').forEach(c => c.classList.remove('active'));
+      if (e) e.target.classList.add('active');
+      const all = getAllMKItems();
+      if (cat === 'todos') { renderMK(all); return; }
+      renderMK(all.filter(i => i.cat === cat));
+    }
+
+    function publishItem() {
+      const item = {
+        id: 'MK-' + Math.floor(Math.random()*9000+1000),
+        nombre: document.getElementById('mkName').value,
+        titulo: document.getElementById('mkTitle').value,
+        precio: '$' + parseFloat(document.getElementById('mkPrice').value).toFixed(2),
+        status: 'En Revisión'
+      };
+      DB.saveMarketplace(item);
+      closeModal('modalPublish');
+      showToast('Artículo publicado. Será revisado pronto.');
+      renderMK(getAllMKItems());
+    }
+
+    // Init map
+    window.addEventListener('DOMContentLoaded', () => {
+      renderMK(getAllMKItems());
+      const map = L.map('mkMap').setView([18.81,-69.78], 12);
+      L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', { attribution:'OSM' }).addTo(map);
+      sampleItems.forEach(i => { if(i.loc) L.marker(i.loc).addTo(map).bindPopup(i.title); });
+      document.getElementById('distRange').addEventListener('input', e => {
+        document.getElementById('distVal').textContent = e.target.value;
+      });
+    });
+  </script>
+</body>
+</html>

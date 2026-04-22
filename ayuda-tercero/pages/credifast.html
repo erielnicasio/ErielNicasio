@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Credifast - Microcréditos | Ayuda a un Tercero</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i> Ayuda<span>Tercero</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="donaciones.html">Donaciones</a>
+        <a href="credifast.html" class="active">Préstamos</a>
+        <a href="casos.html">Casos Sociales</a>
+        <a href="impacto.html">Impacto</a>
+        <a href="login.html" class="mobile-only">Iniciar Sesión</a>
+        <a href="admin.html" class="mobile-only">Admin</a>
+      </div>
+      <div class="nav-actions">
+        <a href="login.html" class="btn btn--outline btn--sm">Iniciar Sesión</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero" style="padding-bottom:64px">
+    <div class="container">
+      <h1>Credifast</h1>
+      <p>Microcréditos con enfoque social para impulsar emprendimientos locales en Monte Plata.</p>
+    </div>
+  </section>
+
+  <!-- Simulator -->
+  <main class="page-content" style="padding-top:0;margin-top:-40px">
+    <div class="container">
+      <div class="panel" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:40px">
+        <div class="grid grid-2" style="gap:48px;align-items:start">
+          <!-- Simulator Form -->
+          <div>
+            <h2 style="font-family:var(--font-body);font-size:1.5rem;font-weight:800;color:var(--navy);margin-bottom:8px">Simulador de Préstamo</h2>
+            <p class="text-muted mb-24" style="font-size:.9rem">Calcula tu cuota mensual en segundos.</p>
+
+            <div class="mb-24">
+              <label class="form-label">Monto del Préstamo</label>
+              <div style="font-size:2rem;font-weight:800;color:var(--navy);margin-bottom:12px">RD$ <span id="simAmount">5,000</span></div>
+              <input type="range" min="1000" max="50000" value="5000" step="500" id="simRange" style="width:100%">
+              <div class="flex justify-between text-muted" style="font-size:.75rem;margin-top:4px">
+                <span>RD$ 1,000</span><span>RD$ 50,000</span>
+              </div>
+            </div>
+
+            <div class="mb-24">
+              <label class="form-label">Plazo (meses)</label>
+              <div class="chips">
+                <button class="chip active" data-months="3">3 meses</button>
+                <button class="chip" data-months="6">6 meses</button>
+                <button class="chip" data-months="12">12 meses</button>
+                <button class="chip" data-months="24">24 meses</button>
+              </div>
+            </div>
+
+            <div class="grid grid-2" style="gap:12px">
+              <div style="background:var(--gray-50);padding:16px;border-radius:var(--radius-md)">
+                <div style="font-size:.72rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Cuota Mensual</div>
+                <div style="font-weight:800;color:var(--navy);font-size:1.1rem" id="simMonthly">RD$ 1,750</div>
+              </div>
+              <div style="background:var(--gray-50);padding:16px;border-radius:var(--radius-md)">
+                <div style="font-size:.72rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Tasa Anual</div>
+                <div style="font-weight:800;color:var(--green);font-size:1.1rem">5.0%</div>
+              </div>
+              <div style="background:var(--gray-50);padding:16px;border-radius:var(--radius-md)">
+                <div style="font-size:.72rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Total a Pagar</div>
+                <div style="font-weight:800;color:var(--navy);font-size:1.1rem" id="simTotal">RD$ 5,250</div>
+              </div>
+              <div style="background:var(--gray-50);padding:16px;border-radius:var(--radius-md)">
+                <div style="font-size:.72rem;color:var(--text-muted);font-weight:600;text-transform:uppercase;margin-bottom:4px">Interés Total</div>
+                <div style="font-weight:800;color:var(--orange);font-size:1.1rem" id="simInterest">RD$ 250</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Request Form -->
+          <div style="background:var(--gray-50);padding:32px;border-radius:var(--radius-lg)">
+            <h3 style="font-family:var(--font-body);font-size:1.15rem;font-weight:800;color:var(--navy);margin-bottom:20px">Solicitar Préstamo</h3>
+            <form onsubmit="event.preventDefault();submitLoan()">
+              <div class="form-group">
+                <label class="form-label">Nombre Completo</label>
+                <input type="text" class="form-control" id="loanName" placeholder="Tu nombre" required>
+              </div>
+              <div class="form-row">
+                <div class="form-group">
+                  <label class="form-label">Cédula</label>
+                  <input type="text" class="form-control" id="loanCedula" placeholder="000-0000000-0" required>
+                </div>
+                <div class="form-group">
+                  <label class="form-label">Tipo</label>
+                  <select class="form-control" id="loanType">
+                    <option>Personal</option>
+                    <option>Emprendimiento</option>
+                    <option>Emergencia</option>
+                    <option>Educativo</option>
+                  </select>
+                </div>
+              </div>
+              <div class="form-group">
+                <label class="form-label">Propósito del Préstamo</label>
+                <textarea class="form-control" id="loanPurpose" rows="3" placeholder="Describe para qué necesitas el préstamo..." required></textarea>
+              </div>
+              <button type="submit" class="btn btn--primary btn--full">Enviar Solicitud</button>
+            </form>
+          </div>
+        </div>
+      </div>
+
+      <!-- Active Loans Table -->
+      <div class="panel mt-32">
+        <div class="panel__header">
+          <h3 class="panel__title">Solicitudes de Préstamos</h3>
+          <span class="badge badge--blue">En Tiempo Real</span>
+        </div>
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>ID</th>
+                <th>Solicitante</th>
+                <th>Tipo</th>
+                <th>Score</th>
+                <th>Monto</th>
+                <th>Estado</th>
+              </tr>
+            </thead>
+            <tbody id="loanTable"></tbody>
+          </table>
+        </div>
+      </div>
+
+      <!-- Benefits -->
+      <div class="section-header mt-48">
+        <span class="section-label">Ventajas</span>
+        <h2>¿Por Qué Credifast?</h2>
+      </div>
+      <div class="grid grid-3 mb-32">
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="zap"></i></div>
+          <h3>Aprobación Rápida</h3>
+          <p>Respuesta en menos de 24 horas con verificación automatizada.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="shield-check"></i></div>
+          <h3>Tasas Justas</h3>
+          <p>Tasas de interés social desde el 5% anual, sin cargos ocultos.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-card__icon"><i data-lucide="trending-up"></i></div>
+          <h3>Score Social</h3>
+          <p>Tu historial de ayuda comunitaria mejora tu puntaje crediticio.</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:24px;height:24px"></i> Ayuda<span>Tercero</span></a>
+          <p>Ecosistema solidario justo y transparente.</p>
+        </div>
+        <div><h4>Recursos</h4><ul><li><a href="casos.html">Casos sociales</a></li><li><a href="reportes.html">Transparencia</a></li></ul></div>
+        <div><h4>Compañía</h4><ul><li><a href="impacto.html">Impacto</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="legal.html#privacidad">Privacidad</a></li><li><a href="legal.html#terminos">Términos</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Ayuda a un Tercero.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/db.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <script>
+    let selectedMonths = 3;
+    const rate = 0.05;
+
+    function updateSim() {
+      const amount = parseInt(document.getElementById('simRange').value);
+      document.getElementById('simAmount').textContent = amount.toLocaleString('es-DO');
+      const interest = amount * rate * (selectedMonths / 12);
+      const total = amount + interest;
+      const monthly = total / selectedMonths;
+      document.getElementById('simMonthly').textContent = 'RD$ ' + monthly.toLocaleString('es-DO', {maximumFractionDigits:0});
+      document.getElementById('simTotal').textContent = 'RD$ ' + total.toLocaleString('es-DO', {maximumFractionDigits:0});
+      document.getElementById('simInterest').textContent = 'RD$ ' + interest.toLocaleString('es-DO', {maximumFractionDigits:0});
+    }
+
+    function renderLoans() {
+      const loans = DB.getPrestamos();
+      const tbody = document.getElementById('loanTable');
+      tbody.innerHTML = loans.map(l => `
+        <tr>
+          <td><strong>${l.id}</strong></td>
+          <td>${l.nombre}</td>
+          <td>${l.tipo}</td>
+          <td><span class="badge badge--green">${l.score || 'N/A'}</span></td>
+          <td>${l.monto || 'Pendiente'}</td>
+          <td><span class="badge ${l.status==='Aprobado'?'badge--green':l.status==='Rechazado'?'badge--red':'badge--orange'}">${l.status}</span></td>
+        </tr>
+      `).join('');
+    }
+
+    function submitLoan() {
+      const amount = parseInt(document.getElementById('simRange').value);
+      DB.savePrestamo({
+        nombre: document.getElementById('loanName').value,
+        tipo: document.getElementById('loanType').value,
+        score: Math.floor(Math.random()*20+80) + '/100',
+        monto: 'RD$ ' + amount.toLocaleString('es-DO') + ' (' + selectedMonths + ' meses)'
+      });
+      renderLoans();
+      showToast('Solicitud enviada exitosamente.');
+      document.getElementById('loanName').value = '';
+      document.getElementById('loanPurpose').value = '';
+      document.getElementById('loanCedula').value = '';
+    }
+
+    window.addEventListener('DOMContentLoaded', () => {
+      renderLoans();
+      document.getElementById('simRange').addEventListener('input', updateSim);
+      document.querySelectorAll('[data-months]').forEach(btn => {
+        btn.addEventListener('click', () => {
+          document.querySelectorAll('[data-months]').forEach(b => b.classList.remove('active'));
+          btn.classList.add('active');
+          selectedMonths = parseInt(btn.dataset.months);
+          updateSim();
+        });
+      });
+      updateSim();
+    });
+  </script>
+</body>
+</html>

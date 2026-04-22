@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mis Logros Solidarios - Ayuda a un Tercero</title>
+  <link rel="stylesheet" href="../assets/css/styles.css">
+  <script src="https://unpkg.com/lucide@latest"></script>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar scrolled">
+    <div class="container nav-inner">
+      <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:28px;height:28px"></i> Ayuda<span>Tercero</span></a>
+      <div class="nav-links">
+        <a href="../index.html">Inicio</a>
+        <a href="marketplace.html">Marketplace</a>
+        <a href="donaciones.html">Donaciones</a>
+        <a href="credifast.html">Préstamos</a>
+        <a href="casos.html">Casos Sociales</a>
+        <a href="impacto.html">Impacto</a>
+        <a href="login.html" class="mobile-only">Iniciar Sesión</a>
+        <a href="admin.html" class="mobile-only">Admin</a>
+      </div>
+      <div class="nav-actions">
+        <a href="perfil.html" class="btn btn--outline btn--sm">Mi Perfil</a>
+      </div>
+      <button class="nav-toggle" aria-label="Menú"><span></span><span></span><span></span></button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="page-hero" style="padding-bottom:64px">
+    <div class="container">
+      <h1>Mis Logros Solidarios</h1>
+      <p>Cada acción solidaria te acerca a nuevas insignias y recompensas. Sigue avanzando.</p>
+    </div>
+  </section>
+
+  <!-- Content -->
+  <main class="page-content" style="padding-top:0;margin-top:-24px">
+    <div class="container">
+      <!-- Level Card -->
+      <div class="panel" style="border-radius:var(--radius-xl);box-shadow:var(--shadow-xl);padding:40px;margin-bottom:40px">
+        <div class="flex items-center gap-32" style="flex-wrap:wrap">
+          <div style="width:140px;height:140px;background:linear-gradient(135deg,#FFD700,var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;box-shadow:0 12px 28px rgba(245,166,35,.3);border:6px solid var(--white);outline:2px solid var(--gold);flex-shrink:0">
+            <i data-lucide="trophy" style="width:56px;height:56px;color:var(--white)"></i>
+          </div>
+          <div style="flex:1;min-width:280px">
+            <div class="flex justify-between items-center mb-8" style="flex-wrap:wrap;gap:8px">
+              <h2 style="font-family:var(--font-body);font-size:1.5rem;font-weight:800;color:var(--navy)">Nivel Gold</h2>
+              <span style="font-size:2rem;font-weight:900;color:var(--orange)">85%</span>
+            </div>
+            <div style="height:20px;background:var(--gray-100);border-radius:var(--radius-full);overflow:hidden;border:1px solid var(--gray-200);margin-bottom:12px">
+              <div style="height:100%;width:85%;background:linear-gradient(90deg,var(--navy),var(--orange));border-radius:var(--radius-full);position:relative">
+                <div style="position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(255,255,255,.2),transparent);animation:shine 2s infinite"></div>
+              </div>
+            </div>
+            <p class="text-muted" style="font-size:.85rem">450 / 530 puntos para alcanzar Nivel Platinum</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Achievements Grid -->
+      <div class="section-header">
+        <span class="section-label">Insignias</span>
+        <h2>Tus Logros</h2>
+      </div>
+      <div class="grid grid-4">
+        <div class="achievement">
+          <div class="achievement__icon" style="background:var(--orange-light)">
+            <i data-lucide="heart" style="width:28px;height:28px;color:var(--orange)"></i>
+          </div>
+          <h4 style="font-family:var(--font-body);font-size:.9rem;font-weight:700;margin-bottom:4px">Donador Frecuente</h4>
+          <p style="font-size:.75rem;color:var(--text-muted)">10+ donaciones realizadas</p>
+          <div class="progress-track mt-8"><div class="progress-fill" style="width:100%"></div></div>
+        </div>
+        <div class="achievement">
+          <div class="achievement__icon" style="background:var(--green-light)">
+            <i data-lucide="shield-check" style="width:28px;height:28px;color:var(--green)"></i>
+          </div>
+          <h4 style="font-family:var(--font-body);font-size:.9rem;font-weight:700;margin-bottom:4px">Verificador IA</h4>
+          <p style="font-size:.75rem;color:var(--text-muted)">Identidad verificada</p>
+          <div class="progress-track mt-8"><div class="progress-fill" style="width:100%"></div></div>
+        </div>
+        <div class="achievement">
+          <div class="achievement__icon" style="background:#E0F2FE">
+            <i data-lucide="map-pin" style="width:28px;height:28px;color:var(--royal)"></i>
+          </div>
+          <h4 style="font-family:var(--font-body);font-size:.9rem;font-weight:700;margin-bottom:4px">Líder Regional</h4>
+          <p style="font-size:.75rem;color:var(--text-muted)">Top 5 en tu zona</p>
+          <div class="progress-track mt-8"><div class="progress-fill progress-fill--blue" style="width:100%"></div></div>
+        </div>
+        <div class="achievement">
+          <div class="achievement__icon" style="background:#FEF3C7">
+            <i data-lucide="star" style="width:28px;height:28px;color:var(--gold)"></i>
+          </div>
+          <h4 style="font-family:var(--font-body);font-size:.9rem;font-weight:700;margin-bottom:4px">Héroe de la Red</h4>
+          <p style="font-size:.75rem;color:var(--text-muted)">85% completado</p>
+          <div class="progress-track mt-8"><div class="progress-fill progress-fill--orange" style="width:85%"></div></div>
+        </div>
+        <div class="achievement locked">
+          <div class="achievement__icon" style="background:var(--gray-100)">
+            <i data-lucide="lock" style="width:28px;height:28px;color:var(--gray-400)"></i>
+          </div>
+          <h4 style="font-family:var(--font-body);font-size:.9rem;font-weight:700;margin-bottom:4px">Guardian Urbano</h4>
+          <p style="font-size:.75rem;color:var(--text-muted)">Bloqueado</p>
+          <div class="progress-track mt-8"><div class="progress-fill" style="width:30%"></div></div>
+        </div>
+        <div class="achievement locked">
+          <div class="achievement__icon" style="background:var(--gray-100)">
+            <i data-lucide="lock" style="width:28px;height:28px;color:var(--gray-400)"></i>
+          </div>
+          <h4 style="font-family:var(--font-body);font-size:.9rem;font-weight:700;margin-bottom:4px">Embajador Social</h4>
+          <p style="font-size:.75rem;color:var(--text-muted)">Bloqueado</p>
+          <div class="progress-track mt-8"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+        <div class="achievement locked">
+          <div class="achievement__icon" style="background:var(--gray-100)">
+            <i data-lucide="lock" style="width:28px;height:28px;color:var(--gray-400)"></i>
+          </div>
+          <h4 style="font-family:var(--font-body);font-size:.9rem;font-weight:700;margin-bottom:4px">Mentor Comunitario</h4>
+          <p style="font-size:.75rem;color:var(--text-muted)">Bloqueado</p>
+          <div class="progress-track mt-8"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+        <div class="achievement locked">
+          <div class="achievement__icon" style="background:var(--gray-100)">
+            <i data-lucide="lock" style="width:28px;height:28px;color:var(--gray-400)"></i>
+          </div>
+          <h4 style="font-family:var(--font-body);font-size:.9rem;font-weight:700;margin-bottom:4px">Leyenda Solidaria</h4>
+          <p style="font-size:.75rem;color:var(--text-muted)">Bloqueado</p>
+          <div class="progress-track mt-8"><div class="progress-fill" style="width:0%"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__about">
+          <a href="../index.html" class="logo"><i data-lucide="heart-handshake" style="color:var(--orange);width:24px;height:24px"></i> Ayuda<span>Tercero</span></a>
+          <p>Ecosistema solidario justo y transparente.</p>
+        </div>
+        <div><h4>Recursos</h4><ul><li><a href="casos.html">Casos sociales</a></li><li><a href="reportes.html">Transparencia</a></li></ul></div>
+        <div><h4>Compañía</h4><ul><li><a href="impacto.html">Impacto</a></li><li><a href="../index.html#contacto">Contacto</a></li></ul></div>
+        <div><h4>Legal</h4><ul><li><a href="legal.html#privacidad">Privacidad</a></li><li><a href="legal.html#terminos">Términos</a></li></ul></div>
+      </div>
+      <div class="footer__bottom">&copy; 2026 Ayuda a un Tercero.</div>
+    </div>
+  </footer>
+
+  <script src="../assets/js/db.js"></script>
+  <script src="../assets/js/main.js"></script>
+  <style>
+    @keyframes shine {
+      0% { transform: translateX(-100%); }
+      100% { transform: translateX(100%); }
+    }
+  </style>
+</body>
+</html>
